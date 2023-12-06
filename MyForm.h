@@ -122,7 +122,7 @@ namespace POOA2 {
 			// 
 			// panel2
 			// 
-			this->panel2->BackColor = System::Drawing::Color::White;
+			this->panel2->BackColor = System::Drawing::SystemColors::ControlDarkDark;
 			this->panel2->Controls->Add(this->button5);
 			this->panel2->Controls->Add(this->button4);
 			this->panel2->Controls->Add(this->button3);
@@ -136,40 +136,57 @@ namespace POOA2 {
 			// 
 			// button5
 			// 
+			this->button5->BackColor = System::Drawing::SystemColors::ControlDarkDark;
 			this->button5->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->button5->Dock = System::Windows::Forms::DockStyle::Left;
+			this->button5->FlatAppearance->BorderSize = 0;
+			this->button5->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->button5->ForeColor = System::Drawing::SystemColors::ControlLightLight;
 			this->button5->Location = System::Drawing::Point(794, 0);
 			this->button5->Name = L"button5";
 			this->button5->Size = System::Drawing::Size(181, 64);
 			this->button5->TabIndex = 4;
 			this->button5->Text = L"Statistiques";
-			this->button5->UseVisualStyleBackColor = true;
+			this->button5->UseVisualStyleBackColor = false;
 			this->button5->Click += gcnew System::EventHandler(this, &MyForm::button5_Click);
 			// 
 			// button4
 			// 
+			this->button4->BackColor = System::Drawing::SystemColors::ControlDarkDark;
 			this->button4->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->button4->Dock = System::Windows::Forms::DockStyle::Left;
+			this->button4->FlatAppearance->BorderSize = 0;
+			this->button4->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->button4->ForeColor = System::Drawing::SystemColors::ControlLightLight;
 			this->button4->Location = System::Drawing::Point(593, 0);
 			this->button4->Name = L"button4";
 			this->button4->Size = System::Drawing::Size(201, 64);
 			this->button4->TabIndex = 3;
 			this->button4->Text = L"Articles";
-			this->button4->UseVisualStyleBackColor = true;
+			this->button4->UseVisualStyleBackColor = false;
 			this->button4->Click += gcnew System::EventHandler(this, &MyForm::button4_Click);
 			// 
 			// button3
 			// 
+			this->button3->BackColor = System::Drawing::SystemColors::ControlDarkDark;
 			this->button3->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->button3->Dock = System::Windows::Forms::DockStyle::Left;
 			this->button3->FlatAppearance->BorderColor = System::Drawing::Color::Red;
-			this->button3->FlatAppearance->BorderSize = 10;
+			this->button3->FlatAppearance->BorderSize = 0;
+			this->button3->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->button3->ForeColor = System::Drawing::SystemColors::ControlLightLight;
 			this->button3->Location = System::Drawing::Point(388, 0);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(205, 64);
 			this->button3->TabIndex = 2;
 			this->button3->Text = L"Commandes";
-			this->button3->UseVisualStyleBackColor = true;
+			this->button3->UseVisualStyleBackColor = false;
 			this->button3->Click += gcnew System::EventHandler(this, &MyForm::button3_Click);
 			// 
 			// button2
@@ -177,6 +194,11 @@ namespace POOA2 {
 			this->button2->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->button2->Dock = System::Windows::Forms::DockStyle::Left;
 			this->button2->FlatAppearance->BorderColor = System::Drawing::Color::White;
+			this->button2->FlatAppearance->BorderSize = 0;
+			this->button2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->button2->ForeColor = System::Drawing::SystemColors::ControlLightLight;
 			this->button2->Location = System::Drawing::Point(194, 0);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(194, 64);
@@ -187,15 +209,20 @@ namespace POOA2 {
 			// 
 			// button1
 			// 
+			this->button1->BackColor = System::Drawing::SystemColors::ControlDarkDark;
 			this->button1->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->button1->Dock = System::Windows::Forms::DockStyle::Left;
-			this->button1->ForeColor = System::Drawing::Color::Black;
+			this->button1->FlatAppearance->BorderSize = 0;
+			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->button1->ForeColor = System::Drawing::Color::Transparent;
 			this->button1->Location = System::Drawing::Point(0, 0);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(194, 64);
 			this->button1->TabIndex = 0;
 			this->button1->Text = L"Personnel";
-			this->button1->UseVisualStyleBackColor = true;
+			this->button1->UseVisualStyleBackColor = false;
 			this->button1->Click += gcnew System::EventHandler(this, &MyForm::button1_Click);
 			// 
 			// panelContainer
@@ -218,7 +245,7 @@ namespace POOA2 {
 			this->Name = L"MyForm";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"MyForm";
-			this->Load += gcnew System::EventHandler(this, &MyForm::MyForm_Load);
+			//this->Load += gcnew System::EventHandler(this, &MyForm::MyForm_Load);
 			this->panel1->ResumeLayout(false);
 			this->panel1->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
@@ -256,7 +283,5 @@ namespace POOA2 {
 		UC_Stats^ uc = gcnew UC_Stats();
 		addUserControl(uc);
 	}
-private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
-}
 };
 }
