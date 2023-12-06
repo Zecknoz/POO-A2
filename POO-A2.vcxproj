@@ -120,6 +120,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CL_Articles.cpp" />
+    <ClCompile Include="CL_Clients.cpp" />
+    <ClCompile Include="CL_Commandes.cpp" />
+    <ClCompile Include="CL_Employes.cpp" />
+    <ClCompile Include="CL_Gestion.cpp" />
+    <ClCompile Include="CL_LVBDD.cpp" />
+    <ClCompile Include="CL_Personnes.cpp" />
     <ClCompile Include="CL_Services.cpp" />
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="UC_Articles.cpp" />
@@ -129,6 +136,13 @@
     <ClCompile Include="UC_Stats.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CL_Articles.h" />
+    <ClInclude Include="CL_Clients.h" />
+    <ClInclude Include="CL_Commandes.h" />
+    <ClInclude Include="CL_Employes.h" />
+    <ClInclude Include="CL_Gestion.h" />
+    <ClInclude Include="CL_LVBDD.h" />
+    <ClInclude Include="CL_Personnes.h" />
     <ClInclude Include="CL_Services.h" />
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
