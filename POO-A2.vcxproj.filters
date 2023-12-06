@@ -16,6 +16,12 @@
     <Filter Include="UserControls">
       <UniqueIdentifier>{703202e1-83cf-482f-a6b2-9255aaa20810}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Classes">
+      <UniqueIdentifier>{59e49998-adbf-4872-85af-f6e5f99fdd38}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Classes">
+      <UniqueIdentifier>{992fec6c-f6d3-401a-99dd-81c88f26b8ed}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MyForm.cpp">
@@ -36,6 +42,9 @@
     <ClCompile Include="UC_Stats.cpp">
       <Filter>UserControls</Filter>
     </ClCompile>
+    <ClCompile Include="CL_Services.cpp">
+      <Filter>Source Files\Classes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyForm.h">
@@ -55,6 +64,9 @@
     </ClInclude>
     <ClInclude Include="UC_Stats.h">
       <Filter>UserControls</Filter>
+    </ClInclude>
+    <ClInclude Include="CL_Services.h">
+      <Filter>Header Files\Classes</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
