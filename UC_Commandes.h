@@ -1,4 +1,7 @@
 ﻿#pragma once
+#include "UC_Commande_Afficher.h"
+#include "UC_Commande_Ajouter.h"
+#include "UC_Commande_Default.h"
 
 using namespace System;
 using namespace System::ComponentModel;
@@ -35,11 +38,27 @@ namespace POOA2 {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::Button^ Supprimer;
+	private: System::Windows::Forms::Panel^ panelContainerCommande;
 	protected:
-	private: System::Windows::Forms::Button^ Modifier;
-	private: System::Windows::Forms::Button^ Ajouter;
-	private: System::Windows::Forms::DataGridView^ dataGridView1;
+
+	protected:
+
+	private: System::Windows::Forms::Button^ ajouterCommandeButton;
+	private: System::Windows::Forms::Button^ afficherCommandeButton;
+	private: System::Windows::Forms::Button^ modifierCommandeButton;
+	private: System::Windows::Forms::Button^ supprimerCommandeButton;
+	protected:
+
+
+
+
+
+	protected:
+
+	protected:
+
+
+
 
 	protected:
 
@@ -56,87 +75,110 @@ namespace POOA2 {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->Supprimer = (gcnew System::Windows::Forms::Button());
-			this->Modifier = (gcnew System::Windows::Forms::Button());
-			this->Ajouter = (gcnew System::Windows::Forms::Button());
-			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
+			this->panelContainerCommande = (gcnew System::Windows::Forms::Panel());
+			this->ajouterCommandeButton = (gcnew System::Windows::Forms::Button());
+			this->afficherCommandeButton = (gcnew System::Windows::Forms::Button());
+			this->modifierCommandeButton = (gcnew System::Windows::Forms::Button());
+			this->supprimerCommandeButton = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
-			// Supprimer
+			// panelContainerCommande
 			// 
-			this->Supprimer->BackColor = System::Drawing::Color::Red;
-			this->Supprimer->FlatAppearance->BorderSize = 0;
-			this->Supprimer->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->Supprimer->Font = (gcnew System::Drawing::Font(L"Candara", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->panelContainerCommande->Location = System::Drawing::Point(194, 0);
+			this->panelContainerCommande->Name = L"panelContainerCommande";
+			this->panelContainerCommande->Size = System::Drawing::Size(794, 363);
+			this->panelContainerCommande->TabIndex = 0;
+			// 
+			// ajouterCommandeButton
+			// 
+			this->ajouterCommandeButton->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->ajouterCommandeButton->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->Supprimer->Location = System::Drawing::Point(823, 281);
-			this->Supprimer->Margin = System::Windows::Forms::Padding(4);
-			this->Supprimer->MinimumSize = System::Drawing::Size(133, 62);
-			this->Supprimer->Name = L"Supprimer";
-			this->Supprimer->Size = System::Drawing::Size(133, 62);
-			this->Supprimer->TabIndex = 7;
-			this->Supprimer->Text = L"Supprimer";
-			this->Supprimer->UseVisualStyleBackColor = false;
+			this->ajouterCommandeButton->ForeColor = System::Drawing::SystemColors::ActiveCaption;
+			this->ajouterCommandeButton->Location = System::Drawing::Point(17, 59);
+			this->ajouterCommandeButton->Name = L"ajouterCommandeButton";
+			this->ajouterCommandeButton->Size = System::Drawing::Size(155, 55);
+			this->ajouterCommandeButton->TabIndex = 1;
+			this->ajouterCommandeButton->Text = L"Ajouter";
+			this->ajouterCommandeButton->UseVisualStyleBackColor = true;
+			this->ajouterCommandeButton->Click += gcnew System::EventHandler(this, &UC_Commandes::ajouterCommandeButton_Click);
 			// 
-			// Modifier
+			// afficherCommandeButton
 			// 
-			this->Modifier->BackColor = System::Drawing::Color::DodgerBlue;
-			this->Modifier->FlatAppearance->BorderSize = 0;
-			this->Modifier->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->Modifier->Font = (gcnew System::Drawing::Font(L"Candara", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->afficherCommandeButton->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->afficherCommandeButton->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->Modifier->Location = System::Drawing::Point(422, 281);
-			this->Modifier->Margin = System::Windows::Forms::Padding(4);
-			this->Modifier->MinimumSize = System::Drawing::Size(133, 62);
-			this->Modifier->Name = L"Modifier";
-			this->Modifier->Size = System::Drawing::Size(133, 62);
-			this->Modifier->TabIndex = 6;
-			this->Modifier->Text = L"Modifier";
-			this->Modifier->UseVisualStyleBackColor = false;
+			this->afficherCommandeButton->ForeColor = System::Drawing::SystemColors::ActiveCaption;
+			this->afficherCommandeButton->Location = System::Drawing::Point(17, 120);
+			this->afficherCommandeButton->Name = L"afficherCommandeButton";
+			this->afficherCommandeButton->Size = System::Drawing::Size(155, 55);
+			this->afficherCommandeButton->TabIndex = 2;
+			this->afficherCommandeButton->Text = L"Afficher";
+			this->afficherCommandeButton->UseVisualStyleBackColor = true;
+			this->afficherCommandeButton->Click += gcnew System::EventHandler(this, &UC_Commandes::afficherCommandeButton_Click);
 			// 
-			// Ajouter
+			// modifierCommandeButton
 			// 
-			this->Ajouter->BackColor = System::Drawing::Color::LimeGreen;
-			this->Ajouter->FlatAppearance->BorderSize = 0;
-			this->Ajouter->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->Ajouter->Font = (gcnew System::Drawing::Font(L"Candara", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->modifierCommandeButton->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->modifierCommandeButton->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->Ajouter->Location = System::Drawing::Point(33, 281);
-			this->Ajouter->Margin = System::Windows::Forms::Padding(4);
-			this->Ajouter->MinimumSize = System::Drawing::Size(133, 62);
-			this->Ajouter->Name = L"Ajouter";
-			this->Ajouter->Size = System::Drawing::Size(133, 62);
-			this->Ajouter->TabIndex = 5;
-			this->Ajouter->Text = L"Ajouter";
-			this->Ajouter->UseVisualStyleBackColor = false;
+			this->modifierCommandeButton->ForeColor = System::Drawing::SystemColors::ActiveCaption;
+			this->modifierCommandeButton->Location = System::Drawing::Point(17, 181);
+			this->modifierCommandeButton->Name = L"modifierCommandeButton";
+			this->modifierCommandeButton->Size = System::Drawing::Size(155, 55);
+			this->modifierCommandeButton->TabIndex = 3;
+			this->modifierCommandeButton->Text = L"Modifier";
+			this->modifierCommandeButton->UseVisualStyleBackColor = true;
 			// 
-			// dataGridView1
+			// supprimerCommandeButton
 			// 
-			this->dataGridView1->BackgroundColor = System::Drawing::SystemColors::ButtonFace;
-			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Location = System::Drawing::Point(33, 20);
-			this->dataGridView1->Name = L"dataGridView1";
-			this->dataGridView1->RowHeadersWidth = 51;
-			this->dataGridView1->RowTemplate->Height = 24;
-			this->dataGridView1->Size = System::Drawing::Size(923, 254);
-			this->dataGridView1->TabIndex = 4;
+			this->supprimerCommandeButton->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->supprimerCommandeButton->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->supprimerCommandeButton->ForeColor = System::Drawing::SystemColors::ActiveCaption;
+			this->supprimerCommandeButton->Location = System::Drawing::Point(17, 242);
+			this->supprimerCommandeButton->Name = L"supprimerCommandeButton";
+			this->supprimerCommandeButton->Size = System::Drawing::Size(155, 55);
+			this->supprimerCommandeButton->TabIndex = 4;
+			this->supprimerCommandeButton->Text = L"Supprimer";
+			this->supprimerCommandeButton->UseVisualStyleBackColor = true;
 			// 
 			// UC_Commandes
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::Gray;
-			this->Controls->Add(this->Supprimer);
-			this->Controls->Add(this->Modifier);
-			this->Controls->Add(this->Ajouter);
-			this->Controls->Add(this->dataGridView1);
+			this->Controls->Add(this->supprimerCommandeButton);
+			this->Controls->Add(this->modifierCommandeButton);
+			this->Controls->Add(this->afficherCommandeButton);
+			this->Controls->Add(this->ajouterCommandeButton);
+			this->Controls->Add(this->panelContainerCommande);
 			this->Name = L"UC_Commandes";
 			this->Size = System::Drawing::Size(988, 363);
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
+			this->Load += gcnew System::EventHandler(this, &UC_Commandes::UC_Commandes_Load);
 			this->ResumeLayout(false);
 
 		}
 #pragma endregion
-	};
+
+	private: System::Void addUserControlCommandes(System::Windows::Forms::UserControl^ userControlCommande) {
+
+		userControlCommande->Dock = System::Windows::Forms::DockStyle::Fill;
+		panelContainerCommande->Controls->Clear();
+		panelContainerCommande->Controls->Add(userControlCommande);
+		userControlCommande->BringToFront();
+	}
+	private: System::Void UC_Commandes_Load(System::Object^ sender, System::EventArgs^ e) {
+		UC_Commande_Default^ uc = gcnew UC_Commande_Default();
+		addUserControlCommandes(uc);
+	}
+	private: System::Void ajouterCommandeButton_Click(System::Object^ sender, System::EventArgs^ e) {
+		UC_Commande_Ajouter^ uc = gcnew UC_Commande_Ajouter();
+		addUserControlCommandes(uc);
+	}
+	private: System::Void afficherCommandeButton_Click(System::Object^ sender, System::EventArgs^ e) {
+		UC_Commande_Afficher^ uc = gcnew UC_Commande_Afficher();
+		addUserControlCommandes(uc);
+	}
+};
 }

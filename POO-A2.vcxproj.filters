@@ -22,6 +22,9 @@
     <Filter Include="Header Files\Classes">
       <UniqueIdentifier>{992fec6c-f6d3-401a-99dd-81c88f26b8ed}</UniqueIdentifier>
     </Filter>
+    <Filter Include="UserControls\UC_Commandes">
+      <UniqueIdentifier>{a385cd2d-e8fa-46db-abae-e14f4a663a14}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MyForm.cpp">
@@ -66,6 +69,24 @@
     <ClCompile Include="CL_LVBDD.cpp">
       <Filter>Source Files\Classes</Filter>
     </ClCompile>
+    <ClCompile Include="CL_Statistique.cpp">
+      <Filter>Source Files\Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="UC_Commande_Ajouter.cpp">
+      <Filter>UserControls\UC_Commandes</Filter>
+    </ClCompile>
+    <ClCompile Include="UC_Commande_Afficher.cpp">
+      <Filter>UserControls\UC_Commandes</Filter>
+    </ClCompile>
+    <ClCompile Include="UC_Commande_Default.cpp">
+      <Filter>UserControls\UC_Commandes</Filter>
+    </ClCompile>
+    <ClCompile Include="UC_Commande_Modifier.cpp">
+      <Filter>UserControls\UC_Commandes</Filter>
+    </ClCompile>
+    <ClCompile Include="UC_Commande_Supprimer.cpp">
+      <Filter>UserControls\UC_Commandes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyForm.h">
@@ -109,6 +130,24 @@
     </ClInclude>
     <ClInclude Include="CL_LVBDD.h">
       <Filter>Header Files\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="CL_Statistique.h">
+      <Filter>Header Files\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="UC_Commande_Ajouter.h">
+      <Filter>UserControls\UC_Commandes</Filter>
+    </ClInclude>
+    <ClInclude Include="UC_Commande_Afficher.h">
+      <Filter>UserControls\UC_Commandes</Filter>
+    </ClInclude>
+    <ClInclude Include="UC_Commande_Default.h">
+      <Filter>UserControls\UC_Commandes</Filter>
+    </ClInclude>
+    <ClInclude Include="UC_Commande_Modifier.h">
+      <Filter>UserControls\UC_Commandes</Filter>
+    </ClInclude>
+    <ClInclude Include="UC_Commande_Supprimer.h">
+      <Filter>UserControls\UC_Commandes</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

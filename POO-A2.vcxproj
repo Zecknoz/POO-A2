@@ -128,10 +128,16 @@
     <ClCompile Include="CL_LVBDD.cpp" />
     <ClCompile Include="CL_Personnes.cpp" />
     <ClCompile Include="CL_Services.cpp" />
+    <ClCompile Include="CL_Statistique.cpp" />
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="UC_Articles.cpp" />
     <ClCompile Include="UC_Client.cpp" />
     <ClCompile Include="UC_Commandes.cpp" />
+    <ClCompile Include="UC_Commande_Afficher.cpp" />
+    <ClCompile Include="UC_Commande_Ajouter.cpp" />
+    <ClCompile Include="UC_Commande_Default.cpp" />
+    <ClCompile Include="UC_Commande_Modifier.cpp" />
+    <ClCompile Include="UC_Commande_Supprimer.cpp" />
     <ClCompile Include="UC_Personnel.cpp" />
     <ClCompile Include="UC_Stats.cpp" />
   </ItemGroup>
@@ -144,6 +150,7 @@
     <ClInclude Include="CL_LVBDD.h" />
     <ClInclude Include="CL_Personnes.h" />
     <ClInclude Include="CL_Services.h" />
+    <ClInclude Include="CL_Statistique.h" />
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -154,6 +161,21 @@
       <FileType>CppControl</FileType>
     </ClInclude>
     <ClInclude Include="UC_Commandes.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="UC_Commande_Afficher.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="UC_Commande_Ajouter.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="UC_Commande_Default.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="UC_Commande_Modifier.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="UC_Commande_Supprimer.h">
       <FileType>CppControl</FileType>
     </ClInclude>
     <ClInclude Include="UC_Personnel.h">
@@ -175,6 +197,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UC_Commandes.resx">
       <DependentUpon>UC_Commandes.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_Commande_Afficher.resx">
+      <DependentUpon>UC_Commande_Afficher.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_Commande_Ajouter.resx">
+      <DependentUpon>UC_Commande_Ajouter.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_Commande_Default.resx">
+      <DependentUpon>UC_Commande_Default.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC_Personnel.resx">
       <DependentUpon>UC_Personnel.h</DependentUpon>
