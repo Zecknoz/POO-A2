@@ -39,7 +39,13 @@ namespace POOA2 {
 	protected:
 	private: System::Windows::Forms::Button^ Modifier;
 	private: System::Windows::Forms::Button^ Ajouter;
-	private: System::Windows::Forms::DataGridView^ dataGridView1;
+	private: System::Windows::Forms::DataGridView^ PersonnelData;
+
+
+	protected:
+
+
+
 
 	protected:
 
@@ -62,8 +68,8 @@ namespace POOA2 {
 			this->Supprimer = (gcnew System::Windows::Forms::Button());
 			this->Modifier = (gcnew System::Windows::Forms::Button());
 			this->Ajouter = (gcnew System::Windows::Forms::Button());
-			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
+			this->PersonnelData = (gcnew System::Windows::Forms::DataGridView());
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->PersonnelData))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// Supprimer
@@ -73,7 +79,7 @@ namespace POOA2 {
 			this->Supprimer->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->Supprimer->Font = (gcnew System::Drawing::Font(L"Candara", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->Supprimer->Location = System::Drawing::Point(821, 286);
+			this->Supprimer->Location = System::Drawing::Point(823, 281);
 			this->Supprimer->Margin = System::Windows::Forms::Padding(4);
 			this->Supprimer->MinimumSize = System::Drawing::Size(133, 62);
 			this->Supprimer->Name = L"Supprimer";
@@ -89,7 +95,7 @@ namespace POOA2 {
 			this->Modifier->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->Modifier->Font = (gcnew System::Drawing::Font(L"Candara", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->Modifier->Location = System::Drawing::Point(420, 286);
+			this->Modifier->Location = System::Drawing::Point(422, 281);
 			this->Modifier->Margin = System::Windows::Forms::Padding(4);
 			this->Modifier->MinimumSize = System::Drawing::Size(133, 62);
 			this->Modifier->Name = L"Modifier";
@@ -105,7 +111,7 @@ namespace POOA2 {
 			this->Ajouter->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->Ajouter->Font = (gcnew System::Drawing::Font(L"Candara", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->Ajouter->Location = System::Drawing::Point(31, 286);
+			this->Ajouter->Location = System::Drawing::Point(33, 281);
 			this->Ajouter->Margin = System::Windows::Forms::Padding(4);
 			this->Ajouter->MinimumSize = System::Drawing::Size(133, 62);
 			this->Ajouter->Name = L"Ajouter";
@@ -114,16 +120,17 @@ namespace POOA2 {
 			this->Ajouter->Text = L"Ajouter";
 			this->Ajouter->UseVisualStyleBackColor = false;
 			// 
-			// dataGridView1
+			// PersonnelData
 			// 
-			this->dataGridView1->BackgroundColor = System::Drawing::SystemColors::ButtonFace;
-			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Location = System::Drawing::Point(31, 25);
-			this->dataGridView1->Name = L"dataGridView1";
-			this->dataGridView1->RowHeadersWidth = 51;
-			this->dataGridView1->RowTemplate->Height = 24;
-			this->dataGridView1->Size = System::Drawing::Size(923, 254);
-			this->dataGridView1->TabIndex = 4;
+			this->PersonnelData->BackgroundColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->PersonnelData->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->PersonnelData->Location = System::Drawing::Point(33, 20);
+			this->PersonnelData->Name = L"PersonnelData";
+			this->PersonnelData->RowHeadersWidth = 51;
+			this->PersonnelData->RowTemplate->Height = 24;
+			this->PersonnelData->Size = System::Drawing::Size(923, 254);
+			this->PersonnelData->TabIndex = 4;
+			this->PersonnelData->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &UC_Personnel::dataGridView1_CellContentClick);
 			// 
 			// UC_Personnel
 			// 
@@ -133,13 +140,16 @@ namespace POOA2 {
 			this->Controls->Add(this->Supprimer);
 			this->Controls->Add(this->Modifier);
 			this->Controls->Add(this->Ajouter);
-			this->Controls->Add(this->dataGridView1);
+			this->Controls->Add(this->PersonnelData);
 			this->Name = L"UC_Personnel";
 			this->Size = System::Drawing::Size(988, 363);
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->PersonnelData))->EndInit();
 			this->ResumeLayout(false);
 
 		}
 #pragma endregion
-	};
+	private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
+
+	}
+};
 }

@@ -23,3 +23,8 @@ System::String^ CL_Employes::afficher()
 	// TODO: insert return statement here
 }
 
+System::String^ CL_Employes::afficherToutPersonne()
+{
+	return "SELECT * FROM Personnel";
+}
+

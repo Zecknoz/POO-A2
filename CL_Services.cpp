@@ -20,6 +20,11 @@ void CL_Services::afficherPersonne(System::String^ nom, System::String^ prenom)
     throw gcnew System::NotImplementedException();
 }
 
+void CL_Services::afficherToutPersonne()
+{
+
+}
+
 void CL_Services::ajouterClient(System::String^ nom, System::String^ prenom, System::String^ adresse, System::String^ AdrLivraison, System::String^ AdrFacturation, System::String^ dateAnniv, System::String^ datePremAchat, unsigned int code_client)
 {
     throw gcnew System::NotImplementedException();

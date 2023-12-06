@@ -16,5 +16,6 @@ public:
     System::String^ supprimer() override;
     System::String^ modifier() override;
     System::String^ afficher() override;
+    System::String^ afficherToutPersonne();
 };
 
