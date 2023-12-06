@@ -87,6 +87,9 @@
     <ClCompile Include="UC_Commande_Supprimer.cpp">
       <Filter>UserControls\UC_Commandes</Filter>
     </ClCompile>
+    <ClCompile Include="UC_Commande_Afficher_Template.cpp">
+      <Filter>UserControls\UC_Commandes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyForm.h">
@@ -147,6 +150,9 @@
       <Filter>UserControls\UC_Commandes</Filter>
     </ClInclude>
     <ClInclude Include="UC_Commande_Supprimer.h">
+      <Filter>UserControls\UC_Commandes</Filter>
+    </ClInclude>
+    <ClInclude Include="UC_Commande_Afficher_Template.h">
       <Filter>UserControls\UC_Commandes</Filter>
     </ClInclude>
   </ItemGroup>

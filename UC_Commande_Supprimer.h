@@ -35,6 +35,8 @@ namespace POOA2 {
 				delete components;
 			}
 		}
+	private: System::Windows::Forms::Label^ label1;
+	protected:
 
 	private:
 		/// <summary>
@@ -49,7 +51,30 @@ namespace POOA2 {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->SuspendLayout();
+			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->ForeColor = System::Drawing::SystemColors::ActiveCaption;
+			this->label1->Location = System::Drawing::Point(354, 173);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(87, 16);
+			this->label1->TabIndex = 3;
+			this->label1->Text = L"SUPPRIMER";
+			// 
+			// UC_Commande_Supprimer
+			// 
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->BackColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->Controls->Add(this->label1);
+			this->Name = L"UC_Commande_Supprimer";
+			this->Size = System::Drawing::Size(777, 363);
+			this->ResumeLayout(false);
+			this->PerformLayout();
+
 		}
 #pragma endregion
 	};

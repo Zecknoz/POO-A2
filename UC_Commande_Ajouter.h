@@ -36,6 +36,8 @@ namespace POOA2 {
 			}
 		}
 	private: System::Windows::Forms::Label^ label1;
+	private: System::Windows::Forms::Button^ AddCommand;
+
 	protected:
 
 	private:
@@ -52,23 +54,39 @@ namespace POOA2 {
 		void InitializeComponent(void)
 		{
 			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->AddCommand = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// label1
 			// 
 			this->label1->AutoSize = true;
+			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(254)));
 			this->label1->ForeColor = System::Drawing::SystemColors::ActiveCaption;
-			this->label1->Location = System::Drawing::Point(352, 173);
+			this->label1->Location = System::Drawing::Point(9, 8);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(71, 16);
+			this->label1->Size = System::Drawing::Size(213, 16);
 			this->label1->TabIndex = 1;
-			this->label1->Text = L"AJOUTER";
+			this->label1->Text = L"AJOUTER UNE COMMANDE :";
+			// 
+			// AddCommand
+			// 
+			this->AddCommand->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->AddCommand->FlatAppearance->BorderSize = 0;
+			this->AddCommand->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
+			this->AddCommand->Location = System::Drawing::Point(351, 324);
+			this->AddCommand->Name = L"AddCommand";
+			this->AddCommand->Size = System::Drawing::Size(75, 23);
+			this->AddCommand->TabIndex = 2;
+			this->AddCommand->Text = L"Ajouter";
+			this->AddCommand->UseVisualStyleBackColor = true;
 			// 
 			// UC_Commande_Ajouter
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->Controls->Add(this->AddCommand);
 			this->Controls->Add(this->label1);
 			this->Name = L"UC_Commande_Ajouter";
 			this->Size = System::Drawing::Size(777, 363);

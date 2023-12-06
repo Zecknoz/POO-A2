@@ -2,6 +2,8 @@
 #include "UC_Commande_Afficher.h"
 #include "UC_Commande_Ajouter.h"
 #include "UC_Commande_Default.h"
+#include "UC_Commande_Modifier.h"
+#include "UC_Commande_Supprimer.h"
 
 using namespace System;
 using namespace System::ComponentModel;
@@ -129,6 +131,7 @@ namespace POOA2 {
 			this->modifierCommandeButton->TabIndex = 3;
 			this->modifierCommandeButton->Text = L"Modifier";
 			this->modifierCommandeButton->UseVisualStyleBackColor = true;
+			this->modifierCommandeButton->Click += gcnew System::EventHandler(this, &UC_Commandes::modifierCommandeButton_Click);
 			// 
 			// supprimerCommandeButton
 			// 
@@ -142,6 +145,7 @@ namespace POOA2 {
 			this->supprimerCommandeButton->TabIndex = 4;
 			this->supprimerCommandeButton->Text = L"Supprimer";
 			this->supprimerCommandeButton->UseVisualStyleBackColor = true;
+			this->supprimerCommandeButton->Click += gcnew System::EventHandler(this, &UC_Commandes::supprimerCommandeButton_Click);
 			// 
 			// UC_Commandes
 			// 
@@ -178,6 +182,14 @@ namespace POOA2 {
 	}
 	private: System::Void afficherCommandeButton_Click(System::Object^ sender, System::EventArgs^ e) {
 		UC_Commande_Afficher^ uc = gcnew UC_Commande_Afficher();
+		addUserControlCommandes(uc);
+	}
+	private: System::Void modifierCommandeButton_Click(System::Object^ sender, System::EventArgs^ e) {
+		UC_Commande_Modifier^ uc = gcnew UC_Commande_Modifier();
+		addUserControlCommandes(uc);
+	}
+	private: System::Void supprimerCommandeButton_Click(System::Object^ sender, System::EventArgs^ e) {
+		UC_Commande_Supprimer^ uc = gcnew UC_Commande_Supprimer();
 		addUserControlCommandes(uc);
 	}
 };

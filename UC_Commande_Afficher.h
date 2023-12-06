@@ -38,6 +38,8 @@ namespace POOA2 {
 	private: System::Windows::Forms::Label^ label1;
 	protected:
 
+	protected:
+
 	private:
 		/// <summary>
 		/// Required designer variable.
@@ -57,12 +59,14 @@ namespace POOA2 {
 			// label1
 			// 
 			this->label1->AutoSize = true;
+			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(254)));
 			this->label1->ForeColor = System::Drawing::SystemColors::ActiveCaption;
-			this->label1->Location = System::Drawing::Point(352, 173);
+			this->label1->Location = System::Drawing::Point(7, 5);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(73, 16);
+			this->label1->Size = System::Drawing::Size(227, 16);
 			this->label1->TabIndex = 0;
-			this->label1->Text = L"AFFICHER";
+			this->label1->Text = L"AFFICHAGE DES COMMANDES";
 			// 
 			// UC_Commande_Afficher
 			// 
