@@ -1,13 +1,12 @@
 #pragma once
+#include "CL_Gestion.h"
 #include "CL_Employes.h"
-#include "CL_Clients.h"
 #include "CL_Statistique.h"
 #include "CL_LVBDD.h"
 
 ref class CL_Services
 {
 private:
-
 	CL_Gestion^ gestion;
 	CL_LVBDD^ lien;
 	CL_Statistique^ stats;

@@ -142,6 +142,11 @@
     <ClCompile Include="UC_Commande_Modifier.cpp" />
     <ClCompile Include="UC_Commande_Supprimer.cpp" />
     <ClCompile Include="UC_Personnel.cpp" />
+    <ClCompile Include="UC_Personnel_Afficher.cpp" />
+    <ClCompile Include="UC_Personnel_Ajouter.cpp" />
+    <ClCompile Include="UC_Personnel_Default.cpp" />
+    <ClCompile Include="UC_Personnel_Modifier.cpp" />
+    <ClCompile Include="UC_Personnel_Supprimer.cpp" />
     <ClCompile Include="UC_Stats.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -187,6 +192,21 @@
     <ClInclude Include="UC_Personnel.h">
       <FileType>CppControl</FileType>
     </ClInclude>
+    <ClInclude Include="UC_Personnel_Afficher.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="UC_Personnel_Ajouter.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="UC_Personnel_Default.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="UC_Personnel_Modifier.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="UC_Personnel_Supprimer.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
     <ClInclude Include="UC_Stats.h">
       <FileType>CppControl</FileType>
     </ClInclude>
@@ -224,6 +244,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UC_Personnel.resx">
       <DependentUpon>UC_Personnel.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_Personnel_Afficher.resx">
+      <DependentUpon>UC_Personnel_Afficher.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_Personnel_Ajouter.resx">
+      <DependentUpon>UC_Personnel_Ajouter.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_Personnel_Default.resx">
+      <DependentUpon>UC_Personnel_Default.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_Personnel_Modifier.resx">
+      <DependentUpon>UC_Personnel_Modifier.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_Personnel_Supprimer.resx">
+      <DependentUpon>UC_Personnel_Supprimer.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC_Stats.resx">
       <DependentUpon>UC_Stats.h</DependentUpon>

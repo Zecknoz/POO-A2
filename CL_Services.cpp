@@ -2,7 +2,8 @@
 
 void CL_Services::ajouterPersonne(System::String^ nom, System::String^ prenom, System::String^ adresse, System::String^ dateEmbauche, unsigned int IDsuperieur)
 {
-    throw gcnew System::NotImplementedException();
+    System::String^ sqlC = this->gestion->ajouter();
+    this->lien->actionOnRows(sqlC);
 }
 
 void CL_Services::supprimerPersonne(unsigned int IDpersonnel)
@@ -22,7 +23,8 @@ void CL_Services::afficherPersonne(System::String^ nom, System::String^ prenom)
 
 void CL_Services::afficherToutPersonne()
 {
-
+    this->gestion = gcnew CL_Employes();
+    System::String^ sqlC = this->gestion->afficher();
 }
 
 void CL_Services::ajouterClient(System::String^ nom, System::String^ prenom, System::String^ adresse, System::String^ AdrLivraison, System::String^ AdrFacturation, System::String^ dateAnniv, System::String^ datePremAchat, unsigned int code_client)

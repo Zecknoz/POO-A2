@@ -283,7 +283,7 @@ namespace POOA2 {
 		UC_Stats^ uc = gcnew UC_Stats();
 		addUserControl(uc);
 	}
-private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
-}
+	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
+	}
 };
 }

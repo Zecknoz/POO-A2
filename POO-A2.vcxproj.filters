@@ -25,6 +25,9 @@
     <Filter Include="UserControls\UC_Commandes">
       <UniqueIdentifier>{a385cd2d-e8fa-46db-abae-e14f4a663a14}</UniqueIdentifier>
     </Filter>
+    <Filter Include="UserControls\UC_Personnels">
+      <UniqueIdentifier>{70f9bdea-d72e-4b12-868d-4fa9c8632888}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MyForm.cpp">
@@ -90,6 +93,21 @@
     <ClCompile Include="UC_Commande_Afficher_Template.cpp">
       <Filter>UserControls\UC_Commandes</Filter>
     </ClCompile>
+    <ClCompile Include="UC_Personnel_Default.cpp">
+      <Filter>UserControls\UC_Personnels</Filter>
+    </ClCompile>
+    <ClCompile Include="UC_Personnel_Ajouter.cpp">
+      <Filter>UserControls\UC_Personnels</Filter>
+    </ClCompile>
+    <ClCompile Include="UC_Personnel_Afficher.cpp">
+      <Filter>UserControls\UC_Personnels</Filter>
+    </ClCompile>
+    <ClCompile Include="UC_Personnel_Modifier.cpp">
+      <Filter>UserControls\UC_Personnels</Filter>
+    </ClCompile>
+    <ClCompile Include="UC_Personnel_Supprimer.cpp">
+      <Filter>UserControls\UC_Personnels</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyForm.h">
@@ -154,6 +172,21 @@
     </ClInclude>
     <ClInclude Include="UC_Commande_Afficher_Template.h">
       <Filter>UserControls\UC_Commandes</Filter>
+    </ClInclude>
+    <ClInclude Include="UC_Personnel_Default.h">
+      <Filter>UserControls\UC_Personnels</Filter>
+    </ClInclude>
+    <ClInclude Include="UC_Personnel_Ajouter.h">
+      <Filter>UserControls\UC_Personnels</Filter>
+    </ClInclude>
+    <ClInclude Include="UC_Personnel_Afficher.h">
+      <Filter>UserControls\UC_Personnels</Filter>
+    </ClInclude>
+    <ClInclude Include="UC_Personnel_Modifier.h">
+      <Filter>UserControls\UC_Personnels</Filter>
+    </ClInclude>
+    <ClInclude Include="UC_Personnel_Supprimer.h">
+      <Filter>UserControls\UC_Personnels</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
