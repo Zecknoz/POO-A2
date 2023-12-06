@@ -17,7 +17,7 @@ public:
 	void supprimerPersonne(unsigned int IDpersonnel);
 	void modifierPersonne(unsigned int IDpersonnel, System::String^ NouveauNom, System::String^ NouveauPrenom, System::String^ dateEmbauche, unsigned int IDsuperieur);
 	void afficherPersonne(System::String^ nom, System::String^ prenom);
-	void afficherToutPersonne();
+	System::Data::DataSet^ afficherToutPersonne(System::String^);
 	void ajouterClient(System::String^ nom, System::String^ prenom, System::String^ adresse, System::String^ AdrLivraison, System::String^ AdrFacturation, System::String^ dateAnniv, System::String^ datePremAchat, unsigned int code_client);
 	void ajouterAdresseClient(unsigned int IIDclient, System::String^ adresse, System::String^ type);
 	void supprimerAdresseClient(unsigned int IDclient, System::String^ adresse, System::String^ type);

@@ -21,10 +21,10 @@ void CL_Services::afficherPersonne(System::String^ nom, System::String^ prenom)
     throw gcnew System::NotImplementedException();
 }
 
-void CL_Services::afficherToutPersonne()
+System::Data::DataSet^ CL_Services::afficherToutPersonne(System::String^ dataTableName)
 {
-    this->gestion = gcnew CL_Employes();
     System::String^ sqlC = this->gestion->afficher();
+    return this->lien->getRows(sqlC, dataTableName);
 }
 
 void CL_Services::ajouterClient(System::String^ nom, System::String^ prenom, System::String^ adresse, System::String^ AdrLivraison, System::String^ AdrFacturation, System::String^ dateAnniv, System::String^ datePremAchat, unsigned int code_client)

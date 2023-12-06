@@ -1,4 +1,5 @@
 #pragma once
+#include "CL_Services.h"
 
 using namespace System;
 using namespace System::ComponentModel;
@@ -36,10 +37,15 @@ namespace POOA2 {
 			}
 		}
 	private: System::Windows::Forms::Label^ lblAfficherEmployes;
+
+	private: System::Data::DataSet^ dataSetEmploye;
+	private: CL_Services^ Services;
+	private: System::Windows::Forms::DataGridView^ dataGridViewEmploye;
+
 	protected:
 
 	protected:
-	private: System::Windows::Forms::DataGridView^ dataGridView1;
+
 
 
 	private:
@@ -55,9 +61,10 @@ namespace POOA2 {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle1 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
 			this->lblAfficherEmployes = (gcnew System::Windows::Forms::Label());
-			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
+			this->dataGridViewEmploye = (gcnew System::Windows::Forms::DataGridView());
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridViewEmploye))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// lblAfficherEmployes
@@ -66,37 +73,46 @@ namespace POOA2 {
 			this->lblAfficherEmployes->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(254)));
 			this->lblAfficherEmployes->ForeColor = System::Drawing::SystemColors::ActiveCaption;
-			this->lblAfficherEmployes->Location = System::Drawing::Point(3, 5);
-			this->lblAfficherEmployes->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->lblAfficherEmployes->Location = System::Drawing::Point(4, 6);
 			this->lblAfficherEmployes->Name = L"lblAfficherEmployes";
-			this->lblAfficherEmployes->Size = System::Drawing::Size(174, 13);
+			this->lblAfficherEmployes->Size = System::Drawing::Size(211, 16);
 			this->lblAfficherEmployes->TabIndex = 1;
 			this->lblAfficherEmployes->Text = L"AFFICHAGE DES EMPLOYES";
 			// 
-			// dataGridView1
+			// dataGridViewEmploye
 			// 
-			this->dataGridView1->AllowUserToAddRows = false;
-			this->dataGridView1->AllowUserToDeleteRows = false;
-			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Location = System::Drawing::Point(6, 21);
-			this->dataGridView1->Name = L"dataGridView1";
-			this->dataGridView1->ReadOnly = true;
-			this->dataGridView1->Size = System::Drawing::Size(574, 271);
-			this->dataGridView1->TabIndex = 2;
+			this->dataGridViewEmploye->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dataGridViewEmploye->Location = System::Drawing::Point(7, 26);
+			this->dataGridViewEmploye->Margin = System::Windows::Forms::Padding(4);
+			this->dataGridViewEmploye->Name = L"dataGridViewEmploye";
+			this->dataGridViewEmploye->RowHeadersWidth = 51;
+			dataGridViewCellStyle1->ForeColor = System::Drawing::Color::Black;
+			this->dataGridViewEmploye->RowsDefaultCellStyle = dataGridViewCellStyle1;
+			this->dataGridViewEmploye->Size = System::Drawing::Size(766, 333);
+			this->dataGridViewEmploye->TabIndex = 2;
 			// 
 			// UC_Personnel_Afficher
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->Controls->Add(this->dataGridView1);
+			this->Controls->Add(this->dataGridViewEmploye);
 			this->Controls->Add(this->lblAfficherEmployes);
+			this->Margin = System::Windows::Forms::Padding(4);
 			this->Name = L"UC_Personnel_Afficher";
-			this->Size = System::Drawing::Size(583, 295);
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
+			this->Size = System::Drawing::Size(777, 363);
+			this->Load += gcnew System::EventHandler(this, &UC_Personnel_Afficher::UC_Personnel_Afficher_Load);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridViewEmploye))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
 #pragma endregion
+	private: System::Void UC_Personnel_Afficher_Load(System::Object^ sender, System::EventArgs^ e) {
+		Services = gcnew CL_Services();
+		this->dataGridViewEmploye->Refresh();
+		this->dataSetEmploye = this->Services->afficherToutPersonne("test");
+		this->dataGridViewEmploye->DataSource = this->dataSetEmploye;
+		this->dataGridViewEmploye->DataMember = "test";
+	}
 	};
 }

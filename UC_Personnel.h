@@ -195,8 +195,7 @@ namespace POOA2 {
 	private: System::Void boutonAfficher_Click(System::Object^ sender, System::EventArgs^ e) {
 		UC_Personnel_Afficher^ uc = gcnew UC_Personnel_Afficher();
 		addUserControlPersonnel(uc);
-		Services = gcnew CL_Services();
-		Services->afficherToutPersonne();
+
 	}
 	private: System::Void Modifier_Click(System::Object^ sender, System::EventArgs^ e) {
 		UC_Personnel_Modifier^ uc = gcnew UC_Personnel_Modifier();

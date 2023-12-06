@@ -36,6 +36,9 @@ namespace POOA2 {
 			}
 		}
 	private: System::Windows::Forms::Label^ lblSupprimerEmployes;
+	private: System::Windows::Forms::Label^ label1;
+	private: System::Windows::Forms::TextBox^ textBox1;
+	private: System::Windows::Forms::Button^ button1;
 	protected:
 
 	private:
@@ -52,6 +55,9 @@ namespace POOA2 {
 		void InitializeComponent(void)
 		{
 			this->lblSupprimerEmployes = (gcnew System::Windows::Forms::Label());
+			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// lblSupprimerEmployes
@@ -60,20 +66,54 @@ namespace POOA2 {
 			this->lblSupprimerEmployes->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(254)));
 			this->lblSupprimerEmployes->ForeColor = System::Drawing::SystemColors::ActiveCaption;
-			this->lblSupprimerEmployes->Location = System::Drawing::Point(2, 5);
-			this->lblSupprimerEmployes->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->lblSupprimerEmployes->Location = System::Drawing::Point(3, 6);
 			this->lblSupprimerEmployes->Name = L"lblSupprimerEmployes";
-			this->lblSupprimerEmployes->Size = System::Drawing::Size(150, 13);
+			this->lblSupprimerEmployes->Size = System::Drawing::Size(181, 16);
 			this->lblSupprimerEmployes->TabIndex = 2;
 			this->lblSupprimerEmployes->Text = L"SUPPRIMER EMPLOYES";
 			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(254)));
+			this->label1->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
+			this->label1->Location = System::Drawing::Point(13, 76);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(341, 29);
+			this->label1->TabIndex = 3;
+			this->label1->Text = L"Id du personnel à supprimer :";
+			// 
+			// textBox1
+			// 
+			this->textBox1->Location = System::Drawing::Point(360, 83);
+			this->textBox1->Name = L"textBox1";
+			this->textBox1->Size = System::Drawing::Size(104, 22);
+			this->textBox1->TabIndex = 4;
+			// 
+			// button1
+			// 
+			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(254)));
+			this->button1->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
+			this->button1->Location = System::Drawing::Point(319, 173);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(139, 65);
+			this->button1->TabIndex = 5;
+			this->button1->Text = L"Supprimer";
+			this->button1->UseVisualStyleBackColor = true;
+			// 
 			// UC_Personnel_Supprimer
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->Controls->Add(this->button1);
+			this->Controls->Add(this->textBox1);
+			this->Controls->Add(this->label1);
 			this->Controls->Add(this->lblSupprimerEmployes);
+			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->Name = L"UC_Personnel_Supprimer";
-			this->Size = System::Drawing::Size(583, 295);
+			this->Size = System::Drawing::Size(777, 363);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
