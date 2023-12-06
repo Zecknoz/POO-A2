@@ -88,7 +88,7 @@ namespace POOA2 {
 			// 
 			// panel1
 			// 
-			this->panel1->BackColor = System::Drawing::Color::Crimson;
+			this->panel1->BackColor = System::Drawing::SystemColors::ControlDarkDark;
 			this->panel1->Controls->Add(this->label1);
 			this->panel1->Controls->Add(this->pictureBox1);
 			this->panel1->Dock = System::Windows::Forms::DockStyle::Top;
@@ -101,12 +101,12 @@ namespace POOA2 {
 			// 
 			this->label1->Anchor = System::Windows::Forms::AnchorStyles::Top;
 			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label1->ForeColor = System::Drawing::Color::White;
 			this->label1->Location = System::Drawing::Point(305, 21);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(362, 34);
+			this->label1->Size = System::Drawing::Size(378, 32);
 			this->label1->TabIndex = 1;
 			this->label1->Text = L"APPLICATION DE GESTION";
 			// 
