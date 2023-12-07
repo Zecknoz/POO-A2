@@ -75,9 +75,10 @@ namespace POOA2 {
 			this->lblAfficherEmployes->ForeColor = System::Drawing::SystemColors::ActiveCaption;
 			this->lblAfficherEmployes->Location = System::Drawing::Point(4, 6);
 			this->lblAfficherEmployes->Name = L"lblAfficherEmployes";
-			this->lblAfficherEmployes->Size = System::Drawing::Size(211, 16);
+			this->lblAfficherEmployes->Size = System::Drawing::Size(174, 13);
 			this->lblAfficherEmployes->TabIndex = 1;
 			this->lblAfficherEmployes->Text = L"AFFICHAGE DES EMPLOYES";
+			this->lblAfficherEmployes->Click += gcnew System::EventHandler(this, &UC_Personnel_Afficher::lblAfficherEmployes_Click);
 			// 
 			// dataGridViewEmploye
 			// 
@@ -90,6 +91,7 @@ namespace POOA2 {
 			this->dataGridViewEmploye->RowsDefaultCellStyle = dataGridViewCellStyle1;
 			this->dataGridViewEmploye->Size = System::Drawing::Size(766, 333);
 			this->dataGridViewEmploye->TabIndex = 2;
+			this->dataGridViewEmploye->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &UC_Personnel_Afficher::dataGridViewEmploye_CellContentClick);
 			// 
 			// UC_Personnel_Afficher
 			// 
@@ -114,5 +116,9 @@ namespace POOA2 {
 		this->dataGridViewEmploye->DataSource = this->dataSetEmploye;
 		this->dataGridViewEmploye->DataMember = "test";
 	}
-	};
+	private: System::Void dataGridViewEmploye_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
+	}
+private: System::Void lblAfficherEmployes_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+};
 }

@@ -19,7 +19,7 @@ System::String^ CL_Clients::modifier()
 
 System::String^ CL_Clients::afficher()
 {
-    throw gcnew System::NotImplementedException();
+    return "SELECT * From Client";
     // TODO: insert return statement here
 }
 

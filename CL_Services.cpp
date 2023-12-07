@@ -90,9 +90,10 @@ void CL_Services::modifierClient(unsigned int IDclient, System::String^ NouveauN
     throw gcnew System::NotImplementedException();
 }
 
-void CL_Services::afficherClient(unsigned int IDclient)
+System::Data::DataSet^ CL_Services::afficherClient(System::String^ dataTableName)
 {
-    throw gcnew System::NotImplementedException();
+    System::String^ sqlC = this->Client->afficher();
+    return this->lien->getRows(sqlC, dataTableName);
 }
 
 void CL_Services::ajouterCommande(unsigned int IDclient, System::String^ articles, System::String^ VilleLivraison, System::String^ methodePaiement)
