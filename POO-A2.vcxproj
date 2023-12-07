@@ -261,6 +261,15 @@
     <EmbeddedResource Include="UC_Client.resx">
       <DependentUpon>UC_Client.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UC_Clients_Afficher.resx">
+      <DependentUpon>UC_Clients_Afficher.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_Clients_Ajouter.resx">
+      <DependentUpon>UC_Clients_Ajouter.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_Clients_Modifier.resx">
+      <DependentUpon>UC_Clients_Modifier.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UC_Clients_Supprimer.resx">
       <DependentUpon>UC_Clients_Supprimer.h</DependentUpon>
     </EmbeddedResource>

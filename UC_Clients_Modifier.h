@@ -49,7 +49,18 @@ namespace POOA2 {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			this->SuspendLayout();
+			// 
+			// UC_Clients_Modifier
+			// 
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->MaximumSize = System::Drawing::Size(777, 363);
+			this->MinimumSize = System::Drawing::Size(777, 363);
+			this->Name = L"UC_Clients_Modifier";
+			this->Size = System::Drawing::Size(777, 363);
+			this->ResumeLayout(false);
+
 		}
 #pragma endregion
 	};
