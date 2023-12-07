@@ -413,32 +413,34 @@ namespace POOA2 {
 		}
 #pragma endregion
 	private: System::Boolean isGoodToAdd() {
-		if (this->tbCodePostal->Text == "" || this->tbComplementAdr->Text == "" || this->tbIdSup->Text == "" || this->tbMail->Text == "" || this->tbNom->Text == "" || this->tbNumRue->Text == "" || this->tbNomRue->Text == "" || this->tbPays->Text == "" || this->tbPrenom->Text == "" || this->tbTel->Text == "" || this->tbVille->Text == "") {
+		if (this->tbCodePostal->Text == "" && this->tbComplementAdr->Text == "" && this->tbIdSup->Text == "" && this->tbMail->Text == "" && this->tbNom->Text == "" && this->tbNumRue->Text == "" && this->tbNomRue->Text == "" && this->tbPays->Text == "" && this->tbPrenom->Text == "" && this->tbTel->Text == "" && this->tbVille->Text == "") {
 			return 0;
 		}
 		else {
 			return 1;
 		}
 	}
-
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 		if (isGoodToAdd()) {
-			this->Services->ajouterPersonne(this->tbNom->Text, this->tbPrenom->Text, this->tbNomRue->Text, this->dateEmbauche->Text, System::Convert::ToUInt32(this->tbIdSup->Text), this->tbMail->Text, this->tbTel->Text);
-			this->lblError->Text = "Le personnel a été ajouté.";
-			this->tbNom->Text = "";
-			this->tbPrenom->Text = "";
-			this->tbCodePostal->Text = "";
-			this->tbComplementAdr->Text = "";
-			this->tbIdSup->Text = "";
-			this->tbMail->Text = "";
-			this->tbNomRue->Text = "";
-			this->tbNumRue->Text = "";
-			this->tbPays->Text = "";
-			this->tbTel->Text = "";
-			this->tbVille->Text = "";
-
-
-
+			System::Boolean result;
+			result = this->Services->ajouterPersonne(this->tbNom->Text, this->tbPrenom->Text, this->tbNomRue->Text, this->dateEmbauche->Text, System::Convert::ToUInt32(this->tbIdSup->Text), this->tbMail->Text, this->tbTel->Text);
+			if (result == 1) {
+				this->lblError->Text = "Le personnel a été ajouté.";
+				this->tbNom->Text = "";
+				this->tbPrenom->Text = "";
+				this->tbCodePostal->Text = "";
+				this->tbComplementAdr->Text = "";
+				this->tbIdSup->Text = "";
+				this->tbMail->Text = "";
+				this->tbNomRue->Text = "";
+				this->tbNumRue->Text = "";
+				this->tbPays->Text = "";
+				this->tbTel->Text = "";
+				this->tbVille->Text = "";
+			}
+			else {
+				this->lblError->Text = "Ce personnel existe déjà.";
+			}
 		}
 		else {
 			this->lblError->Text = "Veuillez remplir correctement la fiche personnel.";

@@ -15,4 +15,5 @@ public:
 	CL_LVBDD();
 	void actionOnRows(System::String^ CommandSQL);
 	System::Data::DataSet^ getRows(System::String^ commandSQL, System::String^);
+	int actionOnRowsNB(System::String^ CommandSQL);
 };

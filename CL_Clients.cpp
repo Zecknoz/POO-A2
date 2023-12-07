@@ -2,8 +2,7 @@
 
 System::String^ CL_Clients::ajouter()
 {
-    throw gcnew System::NotImplementedException();
-    // TODO: insert return statement here
+    return "INSERT INTO Client (nom, prenom, email, tel, date_naissance) VALUES ('" + this->getNom() + "', '" + this->getPrenom() + "', '" + this->getEmail() + "', '" + this->getTelephone() + "', '" + System::Convert::ToDateTime(this->getDateAniv()) + "');";
 }
 
 System::String^ CL_Clients::supprimer()

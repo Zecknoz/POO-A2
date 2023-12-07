@@ -1,5 +1,10 @@
 #include "CL_Employes.h"
 
+System::String^ CL_Employes::doExist()
+{
+	return "SELECT COUNT(*) FROM personnel WHERE prenom = '" + this->getPrenom() + "' and nom = '" + this->getNom() + "';";
+}
+
 System::String^ CL_Employes::ajouter()
 {
 	return "INSERT INTO personnel (prenom, nom, email, tel, date_embauche, id_personnel_1) VALUES ('" + this->getPrenom() + "', '" + this->getNom() + "', '" + this->getEmail() + "','" + this->getTelephone() + "', '" + System::Convert::ToDateTime(this->getDateEmbauche()) + "', '" + this->getIdSuperieur() + "');";

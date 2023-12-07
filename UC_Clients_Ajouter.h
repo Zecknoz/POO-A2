@@ -1,4 +1,5 @@
 ﻿#pragma once
+#include "CL_Services.h"
 
 using namespace System;
 using namespace System::ComponentModel;
@@ -64,6 +65,7 @@ namespace POOA2 {
 	private: System::Windows::Forms::Label^ lblAjouterCLient;
 	private: System::Windows::Forms::TextBox^ tbAdrsFact;
 	private: System::Windows::Forms::Label^ label4;
+	private: CL_Services^ Services;
 
 	private:
 		/// <summary>
@@ -220,6 +222,7 @@ namespace POOA2 {
 			this->button1->TabIndex = 30;
 			this->button1->Text = L"Ajouter";
 			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &UC_Clients_Ajouter::button1_Click);
 			// 
 			// lblAjouterCLient
 			// 
@@ -275,10 +278,39 @@ namespace POOA2 {
 			this->MinimumSize = System::Drawing::Size(777, 363);
 			this->Name = L"UC_Clients_Ajouter";
 			this->Size = System::Drawing::Size(777, 363);
+			this->Load += gcnew System::EventHandler(this, &UC_Clients_Ajouter::UC_Clients_Ajouter_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
 #pragma endregion
-	};
+	private: System::Boolean IsGoodToAdd() {
+		if (this->tbAdrsFact->Text != "" && this->tbAdrsLivr->Text != "" && this->tbMail->Text != "" && this->tbNom->Text != "" && this->tbPrenom->Text != "" && this->tbTel->Text != "") {
+			return 1;
+		}
+		else {
+			return 0;
+		}
+	}
+
+	private: System::Void UC_Clients_Ajouter_Load(System::Object^ sender, System::EventArgs^ e) {
+		Services = gcnew CL_Services();
+		this->lblError->Text = "";
+	}
+	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (IsGoodToAdd()) {
+			this->Services->ajouterClient(this->tbNom->Text, this->tbPrenom->Text, this->tbMail->Text, this->tbTel->Text, this->tbAdrsFact->Text, this->tbAdrsLivr->Text, this->dateNaissance->Text);
+			this->lblError->Text = "Le client a bien été ajouté.";
+			this->tbAdrsFact->Text = "";
+			this->tbAdrsLivr->Text = "";
+			this->tbMail->Text = "";
+			this->tbNom->Text = "";
+			this->tbPrenom->Text = "";
+			this->tbTel->Text = "";
+		}
+		else {
+			this->lblError->Text = "Veuillez correctement remplir la page client.";
+		}
+	}
+};
 }

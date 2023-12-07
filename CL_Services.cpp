@@ -1,6 +1,6 @@
 #include "CL_Services.h"
 
-void CL_Services::ajouterPersonne(System::String^ nom, System::String^ prenom, System::String^ adresse, System::String^ dateEmbauche, unsigned int IDsuperieur, System::String^ email, System::String^ telephone)
+System::Boolean CL_Services::ajouterPersonne(System::String^ nom, System::String^ prenom, System::String^ adresse, System::String^ dateEmbauche, unsigned int IDsuperieur, System::String^ email, System::String^ telephone)
 {
     this->Employe->setNom(nom);
     this->Employe->setPrenom(prenom);
@@ -10,8 +10,22 @@ void CL_Services::ajouterPersonne(System::String^ nom, System::String^ prenom, S
     this->Employe->setEmail(email);
     this->Employe->setTelephone(telephone);
 
-    System::String^ sqlC = this->Employe->ajouter();
-    this->lien->actionOnRows(sqlC);
+    System::String^ sqlC;
+
+    sqlC = this->Employe->doExist();
+    int Nb = this->lien->actionOnRowsNB(sqlC);
+    System::Diagnostics::Debug::WriteLine(Nb);
+    if (Nb >0) {
+
+        return 0;
+    }
+    else {
+        sqlC = this->Employe->ajouter();
+        this->lien->actionOnRows(sqlC);
+        return 1;
+    }
+
+
 }
 
 void CL_Services::supprimerPersonne(unsigned int IDpersonnel)
@@ -37,9 +51,18 @@ System::Data::DataSet^ CL_Services::afficherToutPersonne(System::String^ dataTab
     return this->lien->getRows(sqlC, dataTableName);
 }
 
-void CL_Services::ajouterClient(System::String^ nom, System::String^ prenom, System::String^ adresse, System::String^ AdrLivraison, System::String^ AdrFacturation, System::String^ dateAnniv, System::String^ datePremAchat, unsigned int code_client)
+void CL_Services::ajouterClient(System::String^ nom, System::String^ prenom, System::String^ email, System::String^ telephone, System::String^ AdrLivraison, System::String^ AdrFacturation, System::String^ dateAnniv)
 {
-    throw gcnew System::NotImplementedException();
+    this->Client->setNom(nom);
+    this->Client->setPrenom(prenom);
+    this->Client->setEmail(email);
+    this->Client->setTelephone(telephone);
+    this->Client->setAdrFac(AdrFacturation);
+    this->Client->setAdrLiv(AdrLivraison);
+    this->Client->setDateAniv(dateAnniv);
+
+    System::String^ sqlC = this->Client->ajouter();
+    this->lien->actionOnRows(sqlC);
 }
 
 void CL_Services::ajouterAdresseClient(unsigned int IIDclient, System::String^ adresse, System::String^ type)

@@ -34,3 +34,15 @@ System::Data::DataSet^ CL_LVBDD::getRows(System::String^ commandSQL, System::Str
 
 	return this->datSetObject;
 }
+
+int CL_LVBDD::actionOnRowsNB(System::String^ CommandSQL)
+{
+	int nbElemn;
+	this->sqlCommand = CommandSQL;
+	this->commandObject->CommandText = this->sqlCommand;
+
+	this->connexionObject->Open();
+	nbElemn = System::Convert::ToInt32(this->commandObject->ExecuteScalar());
+	this->connexionObject->Close();
+	return nbElemn;
+}
