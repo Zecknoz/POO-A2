@@ -38,7 +38,8 @@ public:
 	void ajouterArticle(System::String^ nomArt, System::String^ natureArt, System::String^ reference);
 	void supprimerArtcile(unsigned int IDarticle);
 	void ModifierArticle(unsigned int IDartcile, System::String^ NouveauNom, System::String^ NouvelleReference, System::String^ NouvelleCouleur, unsigned int NouveauSeuilReappro, unsigned int NouveauTauxTVA);
-	void afficherArticle(unsigned int IDArticle);
+	System::Data::DataSet^ afficherArticle(unsigned int IDArticle, System::String^);
+	System::Data::DataSet^ afficherTousArticles(System::String^);
 
 	CL_Services();
 };

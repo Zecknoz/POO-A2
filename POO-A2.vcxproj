@@ -131,6 +131,10 @@
     <ClCompile Include="CL_Statistique.cpp" />
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="UC_Articles.cpp" />
+    <ClCompile Include="UC_Articles_Afficher.cpp" />
+    <ClCompile Include="UC_Articles_Ajouter.cpp" />
+    <ClCompile Include="UC_Articles_Modifier.cpp" />
+    <ClCompile Include="UC_Articles_Supprimer.cpp" />
     <ClCompile Include="UC_Client.cpp" />
     <ClCompile Include="UC_Commandes.cpp" />
     <ClCompile Include="UC_Commande_Afficher.cpp" />
@@ -159,6 +163,18 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="UC_Articles.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="UC_Articles_Afficher.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="UC_Articles_Ajouter.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="UC_Articles_Modifier.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="UC_Articles_Supprimer.h">
       <FileType>CppControl</FileType>
     </ClInclude>
     <ClInclude Include="UC_Client.h">
@@ -213,6 +229,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UC_Articles.resx">
       <DependentUpon>UC_Articles.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_Articles_Afficher.resx">
+      <DependentUpon>UC_Articles_Afficher.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_Articles_Ajouter.resx">
+      <DependentUpon>UC_Articles_Ajouter.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_Articles_Modifier.resx">
+      <DependentUpon>UC_Articles_Modifier.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_Articles_Supprimer.resx">
+      <DependentUpon>UC_Articles_Supprimer.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC_Client.resx">
       <DependentUpon>UC_Client.h</DependentUpon>

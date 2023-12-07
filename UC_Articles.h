@@ -1,4 +1,8 @@
 ﻿#pragma once
+#include "UC_Articles_Afficher.h"
+#include "UC_Articles_Ajouter.h"
+#include "UC_Articles_Modifier.h"
+#include "UC_Articles_Supprimer.h"
 
 using namespace System;
 using namespace System::ComponentModel;
@@ -37,9 +41,15 @@ namespace POOA2 {
 		}
 	private: System::Windows::Forms::Button^ Supprimer;
 	protected:
+	private: System::Windows::Forms::Button^ boutonAfficher;
 	private: System::Windows::Forms::Button^ Modifier;
 	private: System::Windows::Forms::Button^ Ajouter;
-	private: System::Windows::Forms::DataGridView^ dataGridView1;
+	private: System::Windows::Forms::Panel^ panelContainerArticles;
+
+	protected:
+
+
+
 
 	protected:
 
@@ -57,10 +67,10 @@ namespace POOA2 {
 		void InitializeComponent(void)
 		{
 			this->Supprimer = (gcnew System::Windows::Forms::Button());
+			this->boutonAfficher = (gcnew System::Windows::Forms::Button());
 			this->Modifier = (gcnew System::Windows::Forms::Button());
 			this->Ajouter = (gcnew System::Windows::Forms::Button());
-			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
+			this->panelContainerArticles = (gcnew System::Windows::Forms::Panel());
 			this->SuspendLayout();
 			// 
 			// Supprimer
@@ -70,14 +80,32 @@ namespace POOA2 {
 			this->Supprimer->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->Supprimer->Font = (gcnew System::Drawing::Font(L"Candara", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->Supprimer->Location = System::Drawing::Point(823, 281);
+			this->Supprimer->Location = System::Drawing::Point(37, 249);
 			this->Supprimer->Margin = System::Windows::Forms::Padding(4);
 			this->Supprimer->MinimumSize = System::Drawing::Size(133, 62);
 			this->Supprimer->Name = L"Supprimer";
 			this->Supprimer->Size = System::Drawing::Size(133, 62);
-			this->Supprimer->TabIndex = 7;
+			this->Supprimer->TabIndex = 11;
 			this->Supprimer->Text = L"Supprimer";
 			this->Supprimer->UseVisualStyleBackColor = false;
+			this->Supprimer->Click += gcnew System::EventHandler(this, &UC_Articles::Supprimer_Click);
+			// 
+			// boutonAfficher
+			// 
+			this->boutonAfficher->BackColor = System::Drawing::Color::Yellow;
+			this->boutonAfficher->FlatAppearance->BorderSize = 0;
+			this->boutonAfficher->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->boutonAfficher->Font = (gcnew System::Drawing::Font(L"Candara", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->boutonAfficher->Location = System::Drawing::Point(37, 111);
+			this->boutonAfficher->Margin = System::Windows::Forms::Padding(4);
+			this->boutonAfficher->MinimumSize = System::Drawing::Size(133, 62);
+			this->boutonAfficher->Name = L"boutonAfficher";
+			this->boutonAfficher->Size = System::Drawing::Size(133, 62);
+			this->boutonAfficher->TabIndex = 12;
+			this->boutonAfficher->Text = L"Afficher";
+			this->boutonAfficher->UseVisualStyleBackColor = false;
+			this->boutonAfficher->Click += gcnew System::EventHandler(this, &UC_Articles::boutonAfficher_Click);
 			// 
 			// Modifier
 			// 
@@ -86,14 +114,15 @@ namespace POOA2 {
 			this->Modifier->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->Modifier->Font = (gcnew System::Drawing::Font(L"Candara", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->Modifier->Location = System::Drawing::Point(422, 281);
+			this->Modifier->Location = System::Drawing::Point(37, 180);
 			this->Modifier->Margin = System::Windows::Forms::Padding(4);
 			this->Modifier->MinimumSize = System::Drawing::Size(133, 62);
 			this->Modifier->Name = L"Modifier";
 			this->Modifier->Size = System::Drawing::Size(133, 62);
-			this->Modifier->TabIndex = 6;
+			this->Modifier->TabIndex = 10;
 			this->Modifier->Text = L"Modifier";
 			this->Modifier->UseVisualStyleBackColor = false;
+			this->Modifier->Click += gcnew System::EventHandler(this, &UC_Articles::Modifier_Click);
 			// 
 			// Ajouter
 			// 
@@ -102,41 +131,63 @@ namespace POOA2 {
 			this->Ajouter->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->Ajouter->Font = (gcnew System::Drawing::Font(L"Candara", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->Ajouter->Location = System::Drawing::Point(33, 281);
+			this->Ajouter->Location = System::Drawing::Point(37, 42);
 			this->Ajouter->Margin = System::Windows::Forms::Padding(4);
 			this->Ajouter->MinimumSize = System::Drawing::Size(133, 62);
 			this->Ajouter->Name = L"Ajouter";
 			this->Ajouter->Size = System::Drawing::Size(133, 62);
-			this->Ajouter->TabIndex = 5;
+			this->Ajouter->TabIndex = 9;
 			this->Ajouter->Text = L"Ajouter";
 			this->Ajouter->UseVisualStyleBackColor = false;
+			this->Ajouter->Click += gcnew System::EventHandler(this, &UC_Articles::Ajouter_Click);
 			// 
-			// dataGridView1
+			// panelContainerArticles
 			// 
-			this->dataGridView1->BackgroundColor = System::Drawing::SystemColors::ButtonFace;
-			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Location = System::Drawing::Point(33, 20);
-			this->dataGridView1->Name = L"dataGridView1";
-			this->dataGridView1->RowHeadersWidth = 51;
-			this->dataGridView1->RowTemplate->Height = 24;
-			this->dataGridView1->Size = System::Drawing::Size(923, 254);
-			this->dataGridView1->TabIndex = 4;
+			this->panelContainerArticles->BackColor = System::Drawing::Color::White;
+			this->panelContainerArticles->Location = System::Drawing::Point(211, 0);
+			this->panelContainerArticles->Name = L"panelContainerArticles";
+			this->panelContainerArticles->Size = System::Drawing::Size(777, 363);
+			this->panelContainerArticles->TabIndex = 13;
 			// 
 			// UC_Articles
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::Gray;
+			this->Controls->Add(this->panelContainerArticles);
 			this->Controls->Add(this->Supprimer);
+			this->Controls->Add(this->boutonAfficher);
 			this->Controls->Add(this->Modifier);
 			this->Controls->Add(this->Ajouter);
-			this->Controls->Add(this->dataGridView1);
 			this->Name = L"UC_Articles";
 			this->Size = System::Drawing::Size(988, 363);
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->ResumeLayout(false);
 
 		}
 #pragma endregion
-	};
+	private: System::Void addUserControlPersonnel(System::Windows::Forms::UserControl^ userControlArticle) {
+
+		userControlArticle->Dock = System::Windows::Forms::DockStyle::Fill;
+		panelContainerArticles->Controls->Clear();
+		panelContainerArticles->Controls->Add(userControlArticle);
+		userControlArticle->BringToFront();
+	}
+	private: System::Void Ajouter_Click(System::Object^ sender, System::EventArgs^ e) {
+		UC_Articles_Ajouter^ uc = gcnew UC_Articles_Ajouter();
+		addUserControlPersonnel(uc);
+
+	}
+	private: System::Void boutonAfficher_Click(System::Object^ sender, System::EventArgs^ e) {
+		UC_Articles_Afficher^ uc = gcnew UC_Articles_Afficher();
+		addUserControlPersonnel(uc);
+	}
+	private: System::Void Modifier_Click(System::Object^ sender, System::EventArgs^ e) {
+		UC_Articles_Modifier^ uc = gcnew UC_Articles_Modifier();
+		addUserControlPersonnel(uc);
+	}
+	private: System::Void Supprimer_Click(System::Object^ sender, System::EventArgs^ e) {
+		UC_Articles_Supprimer^ uc = gcnew UC_Articles_Supprimer();
+		addUserControlPersonnel(uc);
+	}
+};
 }

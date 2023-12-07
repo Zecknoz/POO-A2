@@ -4,8 +4,6 @@
 #include "UC_Personnel_Modifier.h"
 #include "UC_Personnel_Ajouter.h"
 
-#include "CL_Services.h"
-
 using namespace System;
 using namespace System::ComponentModel;
 using namespace System::Collections;

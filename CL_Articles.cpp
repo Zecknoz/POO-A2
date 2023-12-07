@@ -20,6 +20,20 @@ System::String^ CL_Articles::modifier()
 
 System::String^ CL_Articles::afficher()
 {
-    throw gcnew System::NotImplementedException();
-    // TODO: insert return statement here
+    return "SELECT * FROM Article WHERE ID_article='" + this->getId() +"';";
+}
+
+System::String^ CL_Articles::afficherTousArticles()
+{
+    return "SELECT * FROM Article;";
+}
+
+void CL_Articles::setId(unsigned int id)
+{
+    this->id = id;
+}
+
+unsigned int CL_Articles::getId()
+{
+    return this->id;
 }

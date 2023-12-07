@@ -8,6 +8,7 @@ private:
     System::String^ couleur;
 
     unsigned int tauxTVA;
+    unsigned int id;
     float prixUnitaire;
 
 public:
@@ -16,5 +17,9 @@ public:
     System::String^ supprimer() ;
     System::String^ modifier() ;
     System::String^ afficher() ;
+    System::String^ afficherTousArticles();
+
+    void setId(unsigned int);
+    unsigned int getId();
 };
 

@@ -31,7 +31,7 @@ void CL_Services::afficherPersonne(System::String^ nom, System::String^ prenom)
 
 System::Data::DataSet^ CL_Services::afficherToutPersonne(System::String^ dataTableName)
 {
-    System::String^ sqlC = this->gestion->afficher();
+    System::String^ sqlC = this->Employe->afficher();
     return this->lien->getRows(sqlC, dataTableName);
 }
 
@@ -105,9 +105,16 @@ void CL_Services::ModifierArticle(unsigned int IDartcile, System::String^ Nouvea
     throw gcnew System::NotImplementedException();
 }
 
-void CL_Services::afficherArticle(unsigned int IDArticle)
+System::Data::DataSet^ CL_Services::afficherArticle(unsigned int IDArticle, System::String^ dataTableName)
 {
-    throw gcnew System::NotImplementedException();
+    System::String^ sqlC = this->Article->afficher();
+    return this->lien->getRows(sqlC, dataTableName);
+}
+
+System::Data::DataSet^ CL_Services::afficherTousArticles(System::String^ dataTableName)
+{
+    System::String^ sqlC = this->Article->afficherTousArticles();
+    return this->lien->getRows(sqlC, dataTableName);
 }
 
 CL_Services::CL_Services()
