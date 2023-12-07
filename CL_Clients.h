@@ -3,10 +3,18 @@
 ref class CL_Clients
 {
 private:
-    unsigned int IDclient;
+    System::String^ AdrLivraison;
+    System::String^ dateAnniv;
+    System::String^ datePremAchat;
 
     System::String^ nom;
     System::String^ prenom;
+
+    System::String^ AdrFacturaction;
+    System::String^ AdrLivraison;
+    System::String^ dateAnniv;
+    System::String^ email;
+    System::String^ telephone;
 
     System::String^ AdrFacturaction;
     System::String^ AdrLivraison;
