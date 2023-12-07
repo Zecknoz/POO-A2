@@ -1,7 +1,6 @@
 #pragma once
-#include "CL_Gestion.h"
 
-ref class CL_Articles : public CL_Gestion
+ref class CL_Articles
 {
 private:
     System::String^ nom;
@@ -13,9 +12,9 @@ private:
 
 public:
 
-    System::String^ ajouter() override;
-    System::String^ supprimer() override;
-    System::String^ modifier() override;
-    System::String^ afficher() override;
+    System::String^ ajouter() ;
+    System::String^ supprimer() ;
+    System::String^ modifier() ;
+    System::String^ afficher() ;
 };
 

@@ -1,20 +1,25 @@
 #pragma once
-#include "CL_Gestion.h"
+#include "CL_Clients.h"
 #include "CL_Employes.h"
-#include "CL_Personnes.h"
 #include "CL_Statistique.h"
+#include "CL_Commandes.h"
+#include "CL_Articles.h"
 #include "CL_LVBDD.h"
 
 ref class CL_Services
 {
 private:
-	CL_Personnes^ gestion;
-	CL_LVBDD^ lien;
+	CL_Clients^ Client;
+	CL_Employes^ Employe;
 	CL_Statistique^ stats;
+	CL_Commandes^ Commande;
+	CL_Articles^ Article;
+
+	CL_LVBDD^ lien;
 
 public:
 
-	void ajouterPersonne(System::String^ nom, System::String^ prenom, System::String^ adresse, System::String^ dateEmbauche, unsigned int IDsuperieur);
+	void ajouterPersonne(System::String^ nom, System::String^ prenom, System::String^ adresse, System::String^ dateEmbauche, unsigned int IDsuperieur, System::String^, System::String^);
 	void supprimerPersonne(unsigned int IDpersonnel);
 	void modifierPersonne(unsigned int IDpersonnel, System::String^ NouveauNom, System::String^ NouveauPrenom, System::String^ dateEmbauche, unsigned int IDsuperieur);
 	void afficherPersonne(System::String^ nom, System::String^ prenom);

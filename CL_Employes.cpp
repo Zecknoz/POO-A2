@@ -2,13 +2,12 @@
 
 System::String^ CL_Employes::ajouter()
 {
-	return "INSERT INTO personnels (nom_p, prenom_p) VALUES ('Georges', 'non');";
+	return "INSERT INTO personnel (prenom, nom) VALUES ('Georges', 'non');";
 }
 
 System::String^ CL_Employes::supprimer()
 {
-	throw gcnew System::NotImplementedException();
-	// TODO: insert return statement here
+	return "DELETE FROM personnel WHERE id = ";
 }
 
 System::String^ CL_Employes::modifier()
@@ -19,6 +18,15 @@ System::String^ CL_Employes::modifier()
 
 System::String^ CL_Employes::afficher()
 {
-	return "SELECT * FROM personnels";
+	return "SELECT * FROM personnel";
 }
+
+void CL_Employes::setId(unsigned int id)
+{
+	this->id = id;
+}
+
+
+
+
 

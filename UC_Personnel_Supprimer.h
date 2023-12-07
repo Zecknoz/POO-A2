@@ -123,6 +123,7 @@ namespace POOA2 {
 #pragma endregion
 	private: System::Void UC_Personnel_Supprimer_Load(System::Object^ sender, System::EventArgs^ e) {
 	}
+
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
 };

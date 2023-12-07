@@ -124,7 +124,7 @@ namespace POOA2 {
 		}
 #pragma endregion
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		this->Services->ajouterPersonne("Geores", "gor", "12", "13", 5);
+		this->Services->ajouterPersonne();
 	}
 	private: System::Void UC_Personnel_Ajouter_Load(System::Object^ sender, System::EventArgs^ e) {
 		Services = gcnew CL_Services();

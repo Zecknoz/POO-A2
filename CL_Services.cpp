@@ -1,16 +1,22 @@
 #include "CL_Services.h"
 
-void CL_Services::ajouterPersonne(System::String^ nom, System::String^ prenom, System::String^ adresse, System::String^ dateEmbauche, unsigned int IDsuperieur)
+void CL_Services::ajouterPersonne(System::String^ nom, System::String^ prenom, System::String^ adresse, System::String^ dateEmbauche, unsigned int IDsuperieur, System::String^ email, System::String^ telephone)
 {
-    CL_Employes employe;
-    gestion = %employe;
-    System::String^ sqlC = this->gestion->ajouter();
+    this->Employe->setNom(nom);
+    this->Employe->setPrenom(prenom);
+    this->Employe->setIdSuperieur(IDsuperieur);
+    this->Employe->setAdresse(adresse);
+    this->Employe->setDateEmbauche(dateEmbauche);
+    this->Employe->setEmail(email);
+    this->Employe->setTelephone(telephone);
+
+    System::String^ sqlC = this->Employe->ajouter();
     this->lien->actionOnRows(sqlC);
 }
 
 void CL_Services::supprimerPersonne(unsigned int IDpersonnel)
 {
-    throw gcnew System::NotImplementedException();
+
 }
 
 void CL_Services::modifierPersonne(unsigned int IDpersonnel, System::String^ NouveauNom, System::String^ NouveauPrenom, System::String^ dateEmbauche, unsigned int IDsuperieur)
@@ -106,8 +112,10 @@ void CL_Services::afficherArticle(unsigned int IDArticle)
 
 CL_Services::CL_Services()
 {
-    this->gestion = gcnew CL_Employes();
-    this->gestion->setNom("agga");
-    this->lien = gcnew CL_LVBDD();
+    this->Client = gcnew CL_Clients();
+    this->Employe = gcnew CL_Employes();
     this->stats = gcnew CL_Statistique();
+    this->Commande = gcnew CL_Commandes();
+    this->Article = gcnew CL_Articles();
+    this->lien = gcnew CL_LVBDD();
 }
