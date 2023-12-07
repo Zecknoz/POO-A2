@@ -30,7 +30,7 @@ public:
 	void modifierAdresseClient(unsigned int IDclient, System::String^ adresse, System::String^ type);
 	void supprimerClient(unsigned int IDclient);
 	void modifierClient(unsigned int IDclient, System::String^ NouveauNom, System::String^ NouveauPrenom, System::String^ NouvelledatePremAchat, unsigned int NouveauIDclient);
-	void afficherClient(unsigned int IDclient);
+	System::Data::DataSet^ afficherClient(System::String^);
 	void ajouterCommande(unsigned int IDclient, System::String^ articles, System::String^ VilleLivraison, System::String^ methodePaiement);
 	void supprimerCommande(unsigned int IDcommande);
 	void modifierCommande(unsigned int IDcommande, unsigned int NouveauIDclient, System::String^ NouvelleVilleLivraison, System::String^ NouveauMethodePaiment);
