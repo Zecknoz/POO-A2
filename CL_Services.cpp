@@ -98,10 +98,10 @@ System::Data::DataSet^ CL_Services::afficherClient(System::String^ dataTableName
     return this->lien->getRows(sqlC, dataTableName);
 }
 
-void CL_Services::ajouterCommande(unsigned int IDclient, System::String^ articles, System::String^ VilleLivraison, System::String^ methodePaiement)
+/*void CL_Services::ajouterCommande(System::String^ nomClient, System::String^ prenomClient, System::String^ methodePaiement, System::String^ dateEm, System::String^ dateLiv, System::String^ datePaiement, cliext::vector<System::String^>^ tabArticles, cliext::vector<int>^ tabQuantite)
 {
     throw gcnew System::NotImplementedException();
-}
+}*/
 
 void CL_Services::supprimerCommande(unsigned int IDcommande)
 {
@@ -184,3 +184,37 @@ int CL_Services::afficheCA()
     return this->lien->actionOnRowsNB(sqlC);
 }
 
+System::Boolean CL_Services::CheckArticleCommande(System::String^ reference)
+{
+    this->Article->setReference(reference);
+
+    System::String^ sqlC;
+
+    sqlC = this->Article->doExist();
+    int Nb = this->lien->actionOnRowsNB(sqlC);
+    //System::Diagnostics::Debug::WriteLine(Nb);
+    if (Nb > 0) {
+        return 1;
+    }
+    else {
+        return 0;
+    }
+}
+
+System::Boolean CL_Services::doExistClient(System::String^ nom, System::String^ prenom)
+{
+    this->Client->setNom(nom);
+    this->Client->setPrenom(prenom);
+
+    System::String^ sqlC;
+
+    sqlC = this->Client->doExist();
+    int Nb = this->lien->actionOnRowsNB(sqlC);
+    //System::Diagnostics::Debug::WriteLine(Nb);
+    if (Nb > 0) {
+        return 1;
+    }
+    else {
+        return 0;
+    }
+}

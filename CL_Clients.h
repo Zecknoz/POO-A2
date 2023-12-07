@@ -15,6 +15,7 @@ private:
     System::String^ telephone;
 
 public:
+    System::String^ doExist();
     System::String^ ajouter() ;
     System::String^ supprimer() ;
     System::String^ modifier() ;

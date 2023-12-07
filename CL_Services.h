@@ -6,6 +6,8 @@
 #include "CL_Articles.h"
 #include "CL_LVBDD.h"
 
+//#include <cliext/vector>
+
 ref class CL_Services
 {
 private:
@@ -33,7 +35,7 @@ public:
 	void supprimerClient(unsigned int IDclient);
 	void modifierClient(unsigned int IDclient, System::String^ NouveauNom, System::String^ NouveauPrenom, System::String^ NouvelledatePremAchat, unsigned int NouveauIDclient);
 	System::Data::DataSet^ afficherClient(System::String^);
-	void ajouterCommande(unsigned int IDclient, System::String^ articles, System::String^ VilleLivraison, System::String^ methodePaiement);
+	//void ajouterCommande(System::String^ nomClient, System::String^ prenomClient, System::String^ methodePaiement, System::String^ dateEm, System::String^ dateLiv, System::String^ datePaiement, cliext::vector<System::String^>^ tabArticles, cliext::vector<int>^ tabQuantite);
 	void supprimerCommande(unsigned int IDcommande);
 	void modifierCommande(unsigned int IDcommande, unsigned int NouveauIDclient, System::String^ NouvelleVilleLivraison, System::String^ NouveauMethodePaiment);
 	void afficherCommande(unsigned int IDcommande);
@@ -45,6 +47,8 @@ public:
 	System::Data::DataSet^ afficherstat10sup(System::String^);
 	System::Data::DataSet^ afficherstat10less(System::String^);
 	int afficheCA();
+	System::Boolean CheckArticleCommande(System::String^ reference);
+	System::Boolean doExistClient(System::String^ nom, System::String^ prenom);
 
 	CL_Services();
 };
