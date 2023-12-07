@@ -82,7 +82,9 @@ void CL_Services::modifierAdresseClient(unsigned int IDclient, System::String^ a
 
 void CL_Services::supprimerClient(unsigned int IDclient)
 {
-    throw gcnew System::NotImplementedException();
+    this->Client->setId(IDclient);
+    System::String^ sqlC = this->Client->supprimer();
+    this->lien->actionOnRows(sqlC);
 }
 
 void CL_Services::modifierClient(unsigned int IDclient, System::String^ NouveauNom, System::String^ NouveauPrenom, System::String^ NouvelledatePremAchat, unsigned int NouveauIDclient)
@@ -163,3 +165,22 @@ CL_Services::CL_Services()
     this->Article = gcnew CL_Articles();
     this->lien = gcnew CL_LVBDD();
 }
+
+System::Data::DataSet^ CL_Services::afficherstat10sup(System::String^ dataTableName)
+{
+    System::String^ sqlC = this->Statistique->top10BestSales();
+    return this->lien->getRows(sqlC, dataTableName);
+}
+
+System::Data::DataSet^ CL_Services::afficherstat10less(System::String^ dataTableName)
+{
+    System::String^ sqlC = this->Statistique->top10WorstSales();
+    return this->lien->getRows(sqlC, dataTableName);
+}
+
+int CL_Services::afficheCA()
+{
+    System::String^ sqlC = this->Statistique->calculateCommercialValue();
+    return this->lien->actionOnRowsNB(sqlC);
+}
+

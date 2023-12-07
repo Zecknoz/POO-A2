@@ -14,6 +14,7 @@ private:
 	CL_Statistique^ stats;
 	CL_Commandes^ Commande;
 	CL_Articles^ Article;
+	CL_Statistique^ Statistique;
 
 	CL_LVBDD^ lien;
 	System::Data::DataSet^ dataSet;
@@ -41,6 +42,9 @@ public:
 	void ModifierArticle(unsigned int IDartcile, System::String^ NouveauNom, System::String^ NouvelleReference, System::String^ NouvelleCouleur, unsigned int NouveauSeuilReappro, unsigned int NouveauTauxTVA);
 	System::Data::DataSet^ afficherArticle(unsigned int IDArticle, System::String^);
 	System::Data::DataSet^ afficherTousArticles(System::String^);
+	System::Data::DataSet^ afficherstat10sup(System::String^);
+	System::Data::DataSet^ afficherstat10less(System::String^);
+	int afficheCA();
 
 	CL_Services();
 };

@@ -7,8 +7,7 @@ System::String^ CL_Clients::ajouter()
 
 System::String^ CL_Clients::supprimer()
 {
-    throw gcnew System::NotImplementedException();
-    // TODO: insert return statement here
+    return "DELETE FROM Client WHERE ID_client = '" + this->getId() + "';";
 }
 
 System::String^ CL_Clients::modifier()

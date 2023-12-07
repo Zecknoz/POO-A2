@@ -15,25 +15,21 @@ System::String^ CL_Statistique::calculateRevenue(char month)
 System::String^ CL_Statistique::calculateBuyAmont(unsigned int client)
 {
     throw gcnew System::NotImplementedException();
-    // TODO: insert return statement here
 }
 
 System::String^ CL_Statistique::top10BestSales()
 {
-    throw gcnew System::NotImplementedException();
-    // TODO: insert return statement here
+    return "SELECT nom FROM Article;";
 }
 
 System::String^ CL_Statistique::top10WorstSales()
 {
-    throw gcnew System::NotImplementedException();
-    // TODO: insert return statement here
+    return "SELECT prenom FROM Client;";
 }
 
 System::String^ CL_Statistique::calculateCommercialValue()
 {
-    throw gcnew System::NotImplementedException();
-    // TODO: insert return statement here
+    return "SELECT COUNT(DISTINCT prenom) AS NombreDePrenoms FROM Client;";
 }
 
 System::String^ CL_Statistique::calculateBuyValue()
