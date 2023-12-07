@@ -1,4 +1,5 @@
 #pragma once
+#include "CL_Services.h"
 
 using namespace System;
 using namespace System::ComponentModel;
@@ -37,8 +38,11 @@ namespace POOA2 {
 		}
 	private: System::Windows::Forms::Label^ lblSupprimerEmployes;
 	private: System::Windows::Forms::Label^ label1;
-	private: System::Windows::Forms::TextBox^ textBox1;
+	private: System::Windows::Forms::TextBox^ tbIdPersonnel;
+
 	private: System::Windows::Forms::Button^ button1;
+	private: CL_Services^ Services;
+	private: System::Windows::Forms::Label^ lblError;
 	protected:
 
 	private:
@@ -56,8 +60,9 @@ namespace POOA2 {
 		{
 			this->lblSupprimerEmployes = (gcnew System::Windows::Forms::Label());
 			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->tbIdPersonnel = (gcnew System::Windows::Forms::TextBox());
 			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->lblError = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
 			// lblSupprimerEmployes
@@ -84,12 +89,12 @@ namespace POOA2 {
 			this->label1->TabIndex = 3;
 			this->label1->Text = L"Id du personnel à supprimer :";
 			// 
-			// textBox1
+			// tbIdPersonnel
 			// 
-			this->textBox1->Location = System::Drawing::Point(360, 83);
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(104, 22);
-			this->textBox1->TabIndex = 4;
+			this->tbIdPersonnel->Location = System::Drawing::Point(360, 83);
+			this->tbIdPersonnel->Name = L"tbIdPersonnel";
+			this->tbIdPersonnel->Size = System::Drawing::Size(104, 22);
+			this->tbIdPersonnel->TabIndex = 4;
 			// 
 			// button1
 			// 
@@ -104,15 +109,26 @@ namespace POOA2 {
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &UC_Personnel_Supprimer::button1_Click);
 			// 
+			// lblError
+			// 
+			this->lblError->AutoSize = true;
+			this->lblError->ForeColor = System::Drawing::Color::Red;
+			this->lblError->Location = System::Drawing::Point(18, 137);
+			this->lblError->Name = L"lblError";
+			this->lblError->Size = System::Drawing::Size(44, 16);
+			this->lblError->TabIndex = 6;
+			this->lblError->Text = L"label2";
+			// 
 			// UC_Personnel_Supprimer
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->Controls->Add(this->lblError);
 			this->Controls->Add(this->button1);
-			this->Controls->Add(this->textBox1);
+			this->Controls->Add(this->tbIdPersonnel);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->lblSupprimerEmployes);
-			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->Margin = System::Windows::Forms::Padding(4);
 			this->Name = L"UC_Personnel_Supprimer";
 			this->Size = System::Drawing::Size(777, 363);
 			this->Load += gcnew System::EventHandler(this, &UC_Personnel_Supprimer::UC_Personnel_Supprimer_Load);
@@ -122,9 +138,19 @@ namespace POOA2 {
 		}
 #pragma endregion
 	private: System::Void UC_Personnel_Supprimer_Load(System::Object^ sender, System::EventArgs^ e) {
+		Services = gcnew CL_Services();
+		this->lblError->Text = "";
 	}
 
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (this->tbIdPersonnel->Text != "") {
+			this->Services->supprimerPersonne(System::Convert::ToUInt32(this->tbIdPersonnel->Text));
+			this->lblError->Text = "Ce personnel a été supprimé.";
+			this->tbIdPersonnel->Text = "";
+		}
+		else {
+			this->lblError->Text = "Veuillez entre un id personnel valide.";
+		}
 	}
 };
 }

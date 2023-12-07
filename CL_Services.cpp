@@ -16,7 +16,9 @@ void CL_Services::ajouterPersonne(System::String^ nom, System::String^ prenom, S
 
 void CL_Services::supprimerPersonne(unsigned int IDpersonnel)
 {
-
+    this->Employe->setId(IDpersonnel);
+    System::String^ sqlC = this->Employe->supprimer();
+    this->lien->actionOnRows(sqlC);
 }
 
 void CL_Services::modifierPersonne(unsigned int IDpersonnel, System::String^ NouveauNom, System::String^ NouveauPrenom, System::String^ dateEmbauche, unsigned int IDsuperieur)
@@ -90,9 +92,17 @@ void CL_Services::afficherCommande(unsigned int IDcommande)
     throw gcnew System::NotImplementedException();
 }
 
-void CL_Services::ajouterArticle(System::String^ nomArt, System::String^ natureArt, System::String^ reference)
+void CL_Services::ajouterArticle(System::String^ nomArt, System::String^ CategorieArt, System::String^ couleur, System::String^ reference, unsigned int quantite, double prixAchat)
 {
-    throw gcnew System::NotImplementedException();
+    this->Article->setNom(nomArt);
+    this->Article->setCategorie(CategorieArt);
+    this->Article->setCouleur(couleur);
+    this->Article->setReference(reference);
+    this->Article->setQuantite(quantite);
+    this->Article->setPrixAchat(prixAchat);
+    
+    System::String^ sqlC = this->Article->ajouter();
+    this->lien->actionOnRows(sqlC);
 }
 
 void CL_Services::supprimerArtcile(unsigned int IDarticle)
@@ -107,6 +117,7 @@ void CL_Services::ModifierArticle(unsigned int IDartcile, System::String^ Nouvea
 
 System::Data::DataSet^ CL_Services::afficherArticle(unsigned int IDArticle, System::String^ dataTableName)
 {
+    this->Article->setId(IDArticle);
     System::String^ sqlC = this->Article->afficher();
     return this->lien->getRows(sqlC, dataTableName);
 }

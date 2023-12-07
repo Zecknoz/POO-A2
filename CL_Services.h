@@ -35,7 +35,7 @@ public:
 	void supprimerCommande(unsigned int IDcommande);
 	void modifierCommande(unsigned int IDcommande, unsigned int NouveauIDclient, System::String^ NouvelleVilleLivraison, System::String^ NouveauMethodePaiment);
 	void afficherCommande(unsigned int IDcommande);
-	void ajouterArticle(System::String^ nomArt, System::String^ natureArt, System::String^ reference);
+	void ajouterArticle(System::String^, System::String^, System::String^, System::String^, unsigned int, double);
 	void supprimerArtcile(unsigned int IDarticle);
 	void ModifierArticle(unsigned int IDartcile, System::String^ NouveauNom, System::String^ NouvelleReference, System::String^ NouvelleCouleur, unsigned int NouveauSeuilReappro, unsigned int NouveauTauxTVA);
 	System::Data::DataSet^ afficherArticle(unsigned int IDArticle, System::String^);

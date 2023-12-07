@@ -28,5 +28,16 @@ public:
     void setTelephone(System::String^ telephone);
     void setDateEmbauche(System::String^ dateEmbauche);
     void setAdresse(System::String^ adresse);
+
+    unsigned int getIdSuperieur() { return this->idSuperieur; };
+    unsigned int getId() { return this->id; };
+    System::String^ getNom() { return this->nom; };
+    System::String^ getPrenom() { return this->prenom; };
+    System::String^ getEmail() { return this->email; };
+    System::String^ getTelephone() { return this->telephone; };
+    System::String^ getDateEmbauche() { return this->dateEmbauche; };
+    System::String^ getAdresse() { return this->adresse; };
+
+
 };
 

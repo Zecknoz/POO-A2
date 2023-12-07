@@ -2,8 +2,7 @@
 
 System::String^ CL_Articles::ajouter()
 {
-    throw gcnew System::NotImplementedException();
-    // TODO: insert return statement here
+    return "INSERT INTO Article (nom, categorie, couleur, reference, quantite, prix_achat) VALUES ('" + this->getNom() + "', '" + this->getCategorie() + "', '" + this->getCouleur() + "', '" + this->getReference() + "', '" + this->getQuantite() + "', '" + this->getPrixAchat() + "');";
 }
 
 System::String^ CL_Articles::supprimer()
@@ -26,14 +25,4 @@ System::String^ CL_Articles::afficher()
 System::String^ CL_Articles::afficherTousArticles()
 {
     return "SELECT * FROM Article;";
-}
-
-void CL_Articles::setId(unsigned int id)
-{
-    this->id = id;
-}
-
-unsigned int CL_Articles::getId()
-{
-    return this->id;
 }

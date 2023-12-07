@@ -2,12 +2,12 @@
 
 System::String^ CL_Employes::ajouter()
 {
-	return "INSERT INTO personnel (prenom, nom) VALUES ('Georges', 'non');";
+	return "INSERT INTO personnel (prenom, nom, email, tel, date_embauche, id_personnel_1) VALUES ('" + this->getPrenom() + "', '" + this->getNom() + "', '" + this->getEmail() + "','" + this->getTelephone() + "', '" + System::Convert::ToDateTime(this->getDateEmbauche()) + "', '" + this->getIdSuperieur() + "');";
 }
 
 System::String^ CL_Employes::supprimer()
 {
-	return "DELETE FROM personnel WHERE id = ";
+	return "DELETE FROM personnel WHERE ID_personnel = '" + this->getId() + "';";
 }
 
 System::String^ CL_Employes::modifier()

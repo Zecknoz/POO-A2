@@ -60,6 +60,7 @@ namespace POOA2 {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle1 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->TBidArticle = (gcnew System::Windows::Forms::TextBox());
 			this->afficherArticleId = (gcnew System::Windows::Forms::Button());
@@ -128,6 +129,8 @@ namespace POOA2 {
 			this->dataGridViewArticles->Location = System::Drawing::Point(6, 65);
 			this->dataGridViewArticles->Name = L"dataGridViewArticles";
 			this->dataGridViewArticles->RowHeadersWidth = 51;
+			dataGridViewCellStyle1->ForeColor = System::Drawing::Color::Black;
+			this->dataGridViewArticles->RowsDefaultCellStyle = dataGridViewCellStyle1;
 			this->dataGridViewArticles->RowTemplate->Height = 24;
 			this->dataGridViewArticles->Size = System::Drawing::Size(768, 295);
 			this->dataGridViewArticles->TabIndex = 9;
@@ -164,7 +167,7 @@ namespace POOA2 {
 #pragma endregion
 	private: System::Void afficherArticleId_Click(System::Object^ sender, System::EventArgs^ e) {
 		if (this->TBidArticle->Text != "") {
-			int id = System::Convert::ToInt32(this->TBidArticle->Text);
+			int id = System::Convert::ToUInt32(this->TBidArticle->Text);
 			if (id > 0) {
 				this->lblError->Text = "";
 				this->dataGridViewArticles->Refresh();
