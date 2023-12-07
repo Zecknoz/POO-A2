@@ -14,5 +14,9 @@ public:
     virtual System::String^ supprimer() override = 0;
     virtual System::String^ modifier() override = 0;
     virtual System::String^ afficher() override = 0;
+
+    //Setters & Getters
+
+    void setNom(System::String^);
 };
 

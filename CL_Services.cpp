@@ -2,6 +2,8 @@
 
 void CL_Services::ajouterPersonne(System::String^ nom, System::String^ prenom, System::String^ adresse, System::String^ dateEmbauche, unsigned int IDsuperieur)
 {
+    CL_Employes employe;
+    gestion = %employe;
     System::String^ sqlC = this->gestion->ajouter();
     this->lien->actionOnRows(sqlC);
 }
@@ -105,6 +107,7 @@ void CL_Services::afficherArticle(unsigned int IDArticle)
 CL_Services::CL_Services()
 {
     this->gestion = gcnew CL_Employes();
+    this->gestion->setNom("agga");
     this->lien = gcnew CL_LVBDD();
     this->stats = gcnew CL_Statistique();
 }

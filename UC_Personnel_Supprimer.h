@@ -98,10 +98,11 @@ namespace POOA2 {
 			this->button1->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
 			this->button1->Location = System::Drawing::Point(319, 173);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(139, 65);
+			this->button1->Size = System::Drawing::Size(170, 65);
 			this->button1->TabIndex = 5;
 			this->button1->Text = L"Supprimer";
 			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &UC_Personnel_Supprimer::button1_Click);
 			// 
 			// UC_Personnel_Supprimer
 			// 
@@ -114,10 +115,15 @@ namespace POOA2 {
 			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->Name = L"UC_Personnel_Supprimer";
 			this->Size = System::Drawing::Size(777, 363);
+			this->Load += gcnew System::EventHandler(this, &UC_Personnel_Supprimer::UC_Personnel_Supprimer_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
 #pragma endregion
-	};
+	private: System::Void UC_Personnel_Supprimer_Load(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+};
 }

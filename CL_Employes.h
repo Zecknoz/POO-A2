@@ -6,8 +6,6 @@ ref class CL_Employes : public CL_Personnes
 private:
 
     unsigned int idSuperieur;
-    System::String^ nom;
-    System::String^ prenom;
     unsigned int id;
 
 public:
