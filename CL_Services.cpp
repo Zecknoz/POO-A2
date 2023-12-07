@@ -107,7 +107,9 @@ void CL_Services::ajouterArticle(System::String^ nomArt, System::String^ Categor
 
 void CL_Services::supprimerArtcile(unsigned int IDarticle)
 {
-    throw gcnew System::NotImplementedException();
+    this->Article->setId(IDarticle);
+    System::String^ sqlC = this->Article->supprimer();
+    this->lien->actionOnRows(sqlC);
 }
 
 void CL_Services::ModifierArticle(unsigned int IDartcile, System::String^ NouveauNom, System::String^ NouvelleReference, System::String^ NouvelleCouleur, unsigned int NouveauSeuilReappro, unsigned int NouveauTauxTVA)

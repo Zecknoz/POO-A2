@@ -7,8 +7,7 @@ System::String^ CL_Articles::ajouter()
 
 System::String^ CL_Articles::supprimer()
 {
-    throw gcnew System::NotImplementedException();
-    // TODO: insert return statement here
+    return "DELETE FROM Article WHERE ID_Article = '" + this->getId() + "';";
 }
 
 System::String^ CL_Articles::modifier()

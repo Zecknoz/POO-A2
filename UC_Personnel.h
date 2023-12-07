@@ -88,10 +88,11 @@ namespace POOA2 {
 			this->Supprimer->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->Supprimer->Font = (gcnew System::Drawing::Font(L"Candara", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->Supprimer->Location = System::Drawing::Point(28, 202);
-			this->Supprimer->MinimumSize = System::Drawing::Size(100, 50);
+			this->Supprimer->Location = System::Drawing::Point(37, 249);
+			this->Supprimer->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->Supprimer->MinimumSize = System::Drawing::Size(133, 62);
 			this->Supprimer->Name = L"Supprimer";
-			this->Supprimer->Size = System::Drawing::Size(100, 50);
+			this->Supprimer->Size = System::Drawing::Size(133, 62);
 			this->Supprimer->TabIndex = 7;
 			this->Supprimer->Text = L"Supprimer";
 			this->Supprimer->UseVisualStyleBackColor = false;
@@ -104,10 +105,11 @@ namespace POOA2 {
 			this->Modifier->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->Modifier->Font = (gcnew System::Drawing::Font(L"Candara", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->Modifier->Location = System::Drawing::Point(28, 146);
-			this->Modifier->MinimumSize = System::Drawing::Size(100, 50);
+			this->Modifier->Location = System::Drawing::Point(37, 180);
+			this->Modifier->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->Modifier->MinimumSize = System::Drawing::Size(133, 62);
 			this->Modifier->Name = L"Modifier";
-			this->Modifier->Size = System::Drawing::Size(100, 50);
+			this->Modifier->Size = System::Drawing::Size(133, 62);
 			this->Modifier->TabIndex = 6;
 			this->Modifier->Text = L"Modifier";
 			this->Modifier->UseVisualStyleBackColor = false;
@@ -120,10 +122,11 @@ namespace POOA2 {
 			this->Ajouter->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->Ajouter->Font = (gcnew System::Drawing::Font(L"Candara", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->Ajouter->Location = System::Drawing::Point(28, 34);
-			this->Ajouter->MinimumSize = System::Drawing::Size(100, 50);
+			this->Ajouter->Location = System::Drawing::Point(37, 42);
+			this->Ajouter->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->Ajouter->MinimumSize = System::Drawing::Size(133, 62);
 			this->Ajouter->Name = L"Ajouter";
-			this->Ajouter->Size = System::Drawing::Size(100, 50);
+			this->Ajouter->Size = System::Drawing::Size(133, 62);
 			this->Ajouter->TabIndex = 5;
 			this->Ajouter->Text = L"Ajouter";
 			this->Ajouter->UseVisualStyleBackColor = false;
@@ -136,10 +139,11 @@ namespace POOA2 {
 			this->boutonAfficher->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->boutonAfficher->Font = (gcnew System::Drawing::Font(L"Candara", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->boutonAfficher->Location = System::Drawing::Point(28, 90);
-			this->boutonAfficher->MinimumSize = System::Drawing::Size(100, 50);
+			this->boutonAfficher->Location = System::Drawing::Point(37, 111);
+			this->boutonAfficher->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->boutonAfficher->MinimumSize = System::Drawing::Size(133, 62);
 			this->boutonAfficher->Name = L"boutonAfficher";
-			this->boutonAfficher->Size = System::Drawing::Size(100, 50);
+			this->boutonAfficher->Size = System::Drawing::Size(133, 62);
 			this->boutonAfficher->TabIndex = 8;
 			this->boutonAfficher->Text = L"Afficher";
 			this->boutonAfficher->UseVisualStyleBackColor = false;
@@ -148,14 +152,15 @@ namespace POOA2 {
 			// panelContainerPersonnel
 			// 
 			this->panelContainerPersonnel->BackColor = System::Drawing::Color::WhiteSmoke;
-			this->panelContainerPersonnel->Location = System::Drawing::Point(158, 0);
+			this->panelContainerPersonnel->Location = System::Drawing::Point(211, 0);
+			this->panelContainerPersonnel->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->panelContainerPersonnel->Name = L"panelContainerPersonnel";
-			this->panelContainerPersonnel->Size = System::Drawing::Size(583, 295);
+			this->panelContainerPersonnel->Size = System::Drawing::Size(777, 363);
 			this->panelContainerPersonnel->TabIndex = 9;
 			// 
 			// UC_Personnel
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::Gray;
 			this->Controls->Add(this->Supprimer);
@@ -163,9 +168,9 @@ namespace POOA2 {
 			this->Controls->Add(this->boutonAfficher);
 			this->Controls->Add(this->Modifier);
 			this->Controls->Add(this->Ajouter);
-			this->Margin = System::Windows::Forms::Padding(2);
+			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Name = L"UC_Personnel";
-			this->Size = System::Drawing::Size(741, 295);
+			this->Size = System::Drawing::Size(988, 363);
 			this->ResumeLayout(false);
 
 		}

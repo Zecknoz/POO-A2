@@ -295,7 +295,7 @@ namespace POOA2 {
 			this->lblError->Text = "Veuillez remplir correctement les informations relatives à l'article.";
 		}
 		else {
-			this->Services->ajouterArticle(this->tbNomArticle->Text, this->tbCategorieArticle->Text, this->tbCouleurArticle->Text, this->tbRefArticle->Text, System::Convert::ToUInt32(this->tbPrixAchatArticle->Text), System::Convert::ToDouble(this->tbQuantiteArticle->Text));
+			this->Services->ajouterArticle(this->tbNomArticle->Text, this->tbCategorieArticle->Text, this->tbCouleurArticle->Text, this->tbRefArticle->Text, System::Convert::ToUInt32(this->tbQuantiteArticle->Text), System::Convert::ToDouble(this->tbPrixAchatArticle->Text));
 			this->lblError->Text = "Article ajouté avec succès.";
 			this->tbCategorieArticle->Text = "";
 			this->tbCouleurArticle->Text = "";

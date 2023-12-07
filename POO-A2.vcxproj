@@ -136,6 +136,10 @@
     <ClCompile Include="UC_Articles_Modifier.cpp" />
     <ClCompile Include="UC_Articles_Supprimer.cpp" />
     <ClCompile Include="UC_Client.cpp" />
+    <ClCompile Include="UC_Clients_Afficher.cpp" />
+    <ClCompile Include="UC_Clients_Ajouter.cpp" />
+    <ClCompile Include="UC_Clients_Modifier.cpp" />
+    <ClCompile Include="UC_Clients_Supprimer.cpp" />
     <ClCompile Include="UC_Commandes.cpp" />
     <ClCompile Include="UC_Commande_Afficher.cpp" />
     <ClCompile Include="UC_Commande_Afficher_Template.cpp" />
@@ -178,6 +182,18 @@
       <FileType>CppControl</FileType>
     </ClInclude>
     <ClInclude Include="UC_Client.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="UC_Clients_Afficher.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="UC_Clients_Ajouter.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="UC_Clients_Modifier.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="UC_Clients_Supprimer.h">
       <FileType>CppControl</FileType>
     </ClInclude>
     <ClInclude Include="UC_Commandes.h">
@@ -244,6 +260,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UC_Client.resx">
       <DependentUpon>UC_Client.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_Clients_Supprimer.resx">
+      <DependentUpon>UC_Clients_Supprimer.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC_Commandes.resx">
       <DependentUpon>UC_Commandes.h</DependentUpon>
