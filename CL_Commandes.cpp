@@ -20,8 +20,7 @@ System::String^ CL_Commandes::modifier()
 
 System::String^ CL_Commandes::afficher()
 {
-    throw gcnew System::NotImplementedException();
-    // TODO: insert return statement here
+    return "SELECT * FROM Commande;";
 }
 
 System::String^ CL_Commandes::supprimerArticle()

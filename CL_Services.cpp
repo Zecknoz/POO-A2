@@ -184,6 +184,12 @@ int CL_Services::afficheCA()
     return this->lien->actionOnRowsNB(sqlC);
 }
 
+int CL_Services::afficheValue()
+{
+    System::String^ sqlC = this->Statistique->calculateBuyValue();
+    return this->lien->actionOnRowsNB(sqlC);
+}
+
 System::Boolean CL_Services::CheckArticleCommande(System::String^ reference)
 {
     this->Article->setReference(reference);
@@ -217,4 +223,9 @@ System::Boolean CL_Services::doExistClient(System::String^ nom, System::String^ 
     else {
         return 0;
     }
+}
+System::Data::DataSet^ CL_Services::afficherCommande(System::String^ dataTableName)
+{
+    System::String^ sqlC = this->Commande->afficher();
+    return this->lien->getRows(sqlC, dataTableName);
 }

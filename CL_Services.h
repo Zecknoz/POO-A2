@@ -46,7 +46,10 @@ public:
 	System::Data::DataSet^ afficherTousArticles(System::String^);
 	System::Data::DataSet^ afficherstat10sup(System::String^);
 	System::Data::DataSet^ afficherstat10less(System::String^);
+	System::Data::DataSet^ afficherCommande(System::String^);
 	int afficheCA();
+	int afficheValue();
+	//int affichereturnID();
 	System::Boolean CheckArticleCommande(System::String^ reference);
 	System::Boolean doExistClient(System::String^ nom, System::String^ prenom);
 

@@ -2,7 +2,7 @@
 
 CL_LVBDD::CL_LVBDD()
 {
-	this->Connectstring = "Data Source=DESKTOP-120LQ49;Initial Catalog=Projet;User ID=DESKTOP-120LQ49\theoc;Password=;Integrated Security=true;";
+	this->Connectstring = "Data Source=DESKTOP-8DEF7LQ\\SQLSERVER;Initial Catalog=POO	;Integrated Security=True;Encrypt=False";
 	this->sqlCommand = "Rien";
 
 	this->connexionObject = gcnew System::Data::SqlClient::SqlConnection(this->Connectstring);

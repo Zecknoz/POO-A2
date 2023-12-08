@@ -45,11 +45,18 @@ namespace POOA2 {
 	private: System::Windows::Forms::Label^ label4;
 	private: System::Windows::Forms::Label^ label5;
 	private: System::Windows::Forms::TextBox^ CA;
+	private: System::Windows::Forms::TextBox^ panierMoy;
 
-	private: System::Windows::Forms::TextBox^ textBox2;
+
 	private: System::Windows::Forms::Label^ label6;
 	private: System::Data::DataSet^ dataSet10sup;
 	private: System::Data::DataSet^ dataSet10less;
+	private: System::Windows::Forms::TextBox^ returnAchat;
+
+	private: System::Windows::Forms::Label^ label7;
+	private: System::Windows::Forms::TextBox^ enterClient;
+
+	private: System::Windows::Forms::Label^ label8;
 	protected:
 
 	private:
@@ -65,8 +72,8 @@ namespace POOA2 {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle3 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle4 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle1 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle2 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
 			this->dataGridView2 = (gcnew System::Windows::Forms::DataGridView());
@@ -75,8 +82,12 @@ namespace POOA2 {
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->CA = (gcnew System::Windows::Forms::TextBox());
-			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
+			this->panierMoy = (gcnew System::Windows::Forms::TextBox());
 			this->label6 = (gcnew System::Windows::Forms::Label());
+			this->returnAchat = (gcnew System::Windows::Forms::TextBox());
+			this->label7 = (gcnew System::Windows::Forms::Label());
+			this->enterClient = (gcnew System::Windows::Forms::TextBox());
+			this->label8 = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->BeginInit();
 			this->SuspendLayout();
@@ -99,8 +110,8 @@ namespace POOA2 {
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->dataGridView1->Location = System::Drawing::Point(33, 79);
 			this->dataGridView1->Name = L"dataGridView1";
-			dataGridViewCellStyle3->ForeColor = System::Drawing::Color::Black;
-			this->dataGridView1->RowsDefaultCellStyle = dataGridViewCellStyle3;
+			dataGridViewCellStyle1->ForeColor = System::Drawing::Color::Black;
+			this->dataGridView1->RowsDefaultCellStyle = dataGridViewCellStyle1;
 			this->dataGridView1->Size = System::Drawing::Size(149, 213);
 			this->dataGridView1->TabIndex = 4;
 			// 
@@ -110,8 +121,8 @@ namespace POOA2 {
 			this->dataGridView2->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->dataGridView2->Location = System::Drawing::Point(205, 79);
 			this->dataGridView2->Name = L"dataGridView2";
-			dataGridViewCellStyle4->ForeColor = System::Drawing::Color::Black;
-			this->dataGridView2->RowsDefaultCellStyle = dataGridViewCellStyle4;
+			dataGridViewCellStyle2->ForeColor = System::Drawing::Color::Black;
+			this->dataGridView2->RowsDefaultCellStyle = dataGridViewCellStyle2;
 			this->dataGridView2->Size = System::Drawing::Size(158, 213);
 			this->dataGridView2->TabIndex = 5;
 			// 
@@ -162,12 +173,12 @@ namespace POOA2 {
 			this->CA->Size = System::Drawing::Size(71, 20);
 			this->CA->TabIndex = 10;
 			// 
-			// textBox2
+			// panierMoy
 			// 
-			this->textBox2->Location = System::Drawing::Point(568, 29);
-			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(71, 20);
-			this->textBox2->TabIndex = 12;
+			this->panierMoy->Location = System::Drawing::Point(568, 29);
+			this->panierMoy->Name = L"panierMoy";
+			this->panierMoy->Size = System::Drawing::Size(71, 20);
+			this->panierMoy->TabIndex = 12;
 			// 
 			// label6
 			// 
@@ -180,12 +191,52 @@ namespace POOA2 {
 			this->label6->TabIndex = 11;
 			this->label6->Text = L"Montant Panier Moyen :";
 			// 
+			// returnAchat
+			// 
+			this->returnAchat->Location = System::Drawing::Point(703, 61);
+			this->returnAchat->Name = L"returnAchat";
+			this->returnAchat->Size = System::Drawing::Size(35, 20);
+			this->returnAchat->TabIndex = 14;
+			// 
+			// label7
+			// 
+			this->label7->AutoSize = true;
+			this->label7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label7->Location = System::Drawing::Point(392, 61);
+			this->label7->Name = L"label7";
+			this->label7->Size = System::Drawing::Size(247, 16);
+			this->label7->TabIndex = 13;
+			this->label7->Text = L"Montant total des achats du Client :";
+			// 
+			// enterClient
+			// 
+			this->enterClient->Location = System::Drawing::Point(645, 61);
+			this->enterClient->Name = L"enterClient";
+			this->enterClient->Size = System::Drawing::Size(35, 20);
+			this->enterClient->TabIndex = 15;
+			// 
+			// label8
+			// 
+			this->label8->AutoSize = true;
+			this->label8->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label8->Location = System::Drawing::Point(682, 62);
+			this->label8->Name = L"label8";
+			this->label8->Size = System::Drawing::Size(15, 16);
+			this->label8->TabIndex = 16;
+			this->label8->Text = L"=";
+			// 
 			// UC_Stats
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::Gray;
-			this->Controls->Add(this->textBox2);
+			this->Controls->Add(this->label8);
+			this->Controls->Add(this->enterClient);
+			this->Controls->Add(this->returnAchat);
+			this->Controls->Add(this->label7);
+			this->Controls->Add(this->panierMoy);
 			this->Controls->Add(this->label6);
 			this->Controls->Add(this->CA);
 			this->Controls->Add(this->label5);
@@ -223,6 +274,9 @@ namespace POOA2 {
 		this->dataGridView2->DataMember = "test";
 
 		this->CA->Text = System::Convert::ToString(this->Services->afficheCA());
+
+
+		this->panierMoy->Text = System::Convert::ToString(this->Services->afficheValue());
 	}
 };
 }

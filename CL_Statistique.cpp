@@ -12,14 +12,15 @@ System::String^ CL_Statistique::calculateRevenue(char month)
     // TODO: insert return statement here
 }
 
-System::String^ CL_Statistique::calculateBuyAmont(unsigned int client)
+System::String^ CL_Statistique::calculateBuyAmont()
 {
     throw gcnew System::NotImplementedException();
+    //return "SELECT ID_personnel_1 AS ID_personnel FROM personnel WHERE ID_personnel = '"+ this->getId() + "';";
 }
 
 System::String^ CL_Statistique::top10BestSales()
 {
-    return "SELECT nom FROM Article;";
+    return "SELECT prenom FROM personnel;";
 }
 
 System::String^ CL_Statistique::top10WorstSales()
@@ -34,6 +35,5 @@ System::String^ CL_Statistique::calculateCommercialValue()
 
 System::String^ CL_Statistique::calculateBuyValue()
 {
-    throw gcnew System::NotImplementedException();
-    // TODO: insert return statement here
+    return "SELECT COUNT(DISTINCT prenom) AS NbPrenom FROM Personnel;";
 }
