@@ -53,8 +53,6 @@ public:
 	int afficheCA();
 	int afficheValue();
 	//int affichereturnID();
-	System::Boolean CheckArticleCommande(System::String^ reference);
-	System::Boolean doExistClient(System::String^ nom, System::String^ prenom);
 
 	CL_Services();
 };
