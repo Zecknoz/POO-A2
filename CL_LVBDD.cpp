@@ -2,7 +2,7 @@
 
 CL_LVBDD::CL_LVBDD()
 {
-	this->Connectstring = "Data Source=DESKTOP-IV5TL90;Initial Catalog=Projet;User ID=DESKTOP-IV5TL90\\theoc;Password=;Integrated Security=true;";
+	this->Connectstring = "Data Source=DESKTOP-120LQ49;Initial Catalog=Projet;User ID=DESKTOP-120LQ49\\theoc;Password=;Integrated Security=true;";
 	this->sqlCommand = "Rien";
 
 	this->connexionObject = gcnew System::Data::SqlClient::SqlConnection(this->Connectstring);
@@ -45,4 +45,16 @@ int CL_LVBDD::actionOnRowsNB(System::String^ CommandSQL)
 	nbElemn = System::Convert::ToInt32(this->commandObject->ExecuteScalar());
 	this->connexionObject->Close();
 	return nbElemn;
+}
+
+double CL_LVBDD::actionOnRowsDouble(System::String^ CommandSQL)
+{
+	double nombre;
+	this->sqlCommand = CommandSQL;
+	this->commandObject->CommandText = this->sqlCommand;
+
+	this->connexionObject->Open();
+	nombre = System::Convert::ToDouble(this->commandObject->ExecuteScalar());
+	this->connexionObject->Close();
+	return nombre;
 }

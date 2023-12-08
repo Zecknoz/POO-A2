@@ -25,6 +25,7 @@ public:
 	void modifierPersonne(unsigned int IDpersonnel, System::String^ NouveauNom, System::String^ NouveauPrenom, System::String^ dateEmbauche, unsigned int IDsuperieur);
 	void afficherPersonne(System::String^ nom, System::String^ prenom);
 	System::Data::DataSet^ afficherToutPersonne(System::String^);
+	System::Boolean doExistClient(System::String^ nom, System::String^ prenom);
 	void ajouterClient(System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^);
 	void ajouterAdresseClient(unsigned int IIDclient, System::String^ adresse, System::String^ type);
 	void supprimerAdresseClient(unsigned int IDclient, System::String^ adresse, System::String^ type);
@@ -32,10 +33,12 @@ public:
 	void supprimerClient(unsigned int IDclient);
 	void modifierClient(unsigned int IDclient, System::String^ NouveauNom, System::String^ NouveauPrenom, System::String^ NouvelledatePremAchat, unsigned int NouveauIDclient);
 	System::Data::DataSet^ afficherClient(System::String^);
-	void ajouterCommande(unsigned int IDclient, System::String^ articles, System::String^ VilleLivraison, System::String^ methodePaiement);
+	void ajouterCommande(System::String^ nomClient, System::String^ prenomClient, System::String^ methodePaiement, System::String^ dateEm, System::String^ dateLiv, System::String^ datePaiement, System::String^ Articles, int Quantite);
 	void supprimerCommande(unsigned int IDcommande);
-	void modifierCommande(unsigned int IDcommande, unsigned int NouveauIDclient, System::String^ NouvelleVilleLivraison, System::String^ NouveauMethodePaiment);
+	void modifierCommande(unsigned int IDcommande, unsigned int NouveauIDclient, System::String^ NouvelleVilleLivraison, int NouveauMethodePaiment);
 	void afficherCommande(unsigned int IDcommande);
+	System::Data::DataSet^ afficherToutCommande(System::String^);
+	System::Boolean CheckArticleCommande(System::String^ reference);
 	void ajouterArticle(System::String^, System::String^, System::String^, System::String^, unsigned int, double);
 	void supprimerArtcile(unsigned int IDarticle);
 	void ModifierArticle(unsigned int IDartcile, System::String^ NouveauNom, System::String^ NouvelleReference, System::String^ NouvelleCouleur, unsigned int NouveauSeuilReappro, unsigned int NouveauTauxTVA);

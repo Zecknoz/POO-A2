@@ -1,5 +1,10 @@
 #include "CL_Articles.h"
 
+System::String^ CL_Articles::doExist()
+{
+    return "SELECT COUNT(*) FROM Article WHERE reference = '" + this->getReference() + "';";
+}
+
 System::String^ CL_Articles::ajouter()
 {
     return "INSERT INTO Article (nom, categorie, couleur, reference, quantite, prix_achat) VALUES ('" + this->getNom() + "', '" + this->getCategorie() + "', '" + this->getCouleur() + "', '" + this->getReference() + "', '" + this->getQuantite() + "', '" + this->getPrixAchat() + "');";

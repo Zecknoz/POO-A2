@@ -51,6 +51,24 @@ System::Data::DataSet^ CL_Services::afficherToutPersonne(System::String^ dataTab
     return this->lien->getRows(sqlC, dataTableName);
 }
 
+System::Boolean CL_Services::doExistClient(System::String^ nom, System::String^ prenom)
+{
+    this->Client->setNom(nom);
+    this->Client->setPrenom(prenom);
+
+    System::String^ sqlC;
+
+    sqlC = this->Client->doExist();
+    int Nb = this->lien->actionOnRowsNB(sqlC);
+    //System::Diagnostics::Debug::WriteLine(Nb);
+    if (Nb > 0) {
+        return 1;
+    }
+    else {
+        return 0;
+    }
+}
+
 void CL_Services::ajouterClient(System::String^ nom, System::String^ prenom, System::String^ email, System::String^ telephone, System::String^ AdrLivraison, System::String^ AdrFacturation, System::String^ dateAnniv)
 {
     this->Client->setNom(nom);
@@ -96,17 +114,59 @@ System::Data::DataSet^ CL_Services::afficherClient(System::String^ dataTableName
     return this->lien->getRows(sqlC, dataTableName);
 }
 
-void CL_Services::ajouterCommande(unsigned int IDclient, System::String^ articles, System::String^ VilleLivraison, System::String^ methodePaiement)
+void CL_Services::ajouterCommande(System::String^ nomClient, System::String^ prenomClient, System::String^ methodePaiement, System::String^ dateEm, System::String^ dateLiv, System::String^ datePaiement, System::String^ Articles, int Quantite)
 {
-    throw gcnew System::NotImplementedException();
+    this->Commande->setNomClient(nomClient);
+    this->Commande->setPrenomClient(prenomClient);
+    this->Commande->setMethPaiement(methodePaiement);
+    this->Commande->setDateLivraison(dateLiv);
+    this->Commande->setDateEmmision(dateEm);
+    this->Commande->setDatePaiement(datePaiement);
+    this->Commande->setDateCommande(System::Convert::ToString(System::DateTime::Now));
+    this->Commande->setNumSuivi(this->Commande->getNomClient(), this->Commande->getPrenomClient(), this->Commande->getDateCommande(), "TOULOUSE");
+    this->Commande->setArticle(Articles);
+    this->Commande->setQuantite(Quantite);
+
+    System::String^ sqlC;
+
+    //Ajout dans la table Commande
+    sqlC = "SELECT ID_client FROM Client WHERE nom = '" + this->Commande->getNomClient() + "' and prenom = '"
+        + this->Commande->getPrenomClient() + "';";
+
+    this->Commande->setIdClient(this->lien->actionOnRowsNB(sqlC));
+
+    sqlC = this->Commande->ajouterInCommande();
+    this->lien->actionOnRows(sqlC);
+
+    //Ajout dans la table Contenir
+    sqlC = "SELECT ID_commande FROM Commande WHERE num_suivi = '" + this->Commande->getNumSuivi() + "';";
+    this->Commande->setIdCommande(this->lien->actionOnRowsNB(sqlC));
+
+    sqlC = "SELECT ID_article FROM Article WHERE reference = '" + this->Commande->getArticle() + "';";
+    this->Commande->setIdArticle(this->lien->actionOnRowsNB(sqlC));
+
+    sqlC = this->Commande->ajouterInContenir();
+    this->lien->actionOnRows(sqlC);
+
+    //Ajout dans la table Paiement
+    sqlC = "SELECT prix_achat FROM Article WHERE ID_article = '" + this->Commande->getIdArticle() + "';";
+
+    this->Commande->setMontant(this->Commande->getQuantite() * this->lien->actionOnRowsDouble(sqlC));
+
+    sqlC = this->Commande->ajouterInPaiement();
+    this->lien->actionOnRows(sqlC);
+
+
 }
 
 void CL_Services::supprimerCommande(unsigned int IDcommande)
 {
-    throw gcnew System::NotImplementedException();
+    this->Commande->setIdCommande(IDcommande);
+    System::String^ sqlC = this->Commande->supprimer();
+    this->lien->actionOnRows(sqlC);
 }
 
-void CL_Services::modifierCommande(unsigned int IDcommande, unsigned int NouveauIDclient, System::String^ NouvelleVilleLivraison, System::String^ NouveauMethodePaiment)
+void CL_Services::modifierCommande(unsigned int IDcommande, unsigned int NouveauIDclient, System::String^ NouvelleVilleLivraison, int NouveauMethodePaiment)
 {
     throw gcnew System::NotImplementedException();
 }
@@ -114,6 +174,29 @@ void CL_Services::modifierCommande(unsigned int IDcommande, unsigned int Nouveau
 void CL_Services::afficherCommande(unsigned int IDcommande)
 {
     throw gcnew System::NotImplementedException();
+}
+
+System::Data::DataSet^ CL_Services::afficherToutCommande(System::String^ dataTableName)
+{
+    System::String^ sqlC = this->Commande->afficher();
+    return this->lien->getRows(sqlC, dataTableName);
+}
+
+System::Boolean CL_Services::CheckArticleCommande(System::String^ reference)
+{
+    this->Article->setReference(reference);
+
+    System::String^ sqlC;
+
+    sqlC = this->Article->doExist();
+    int Nb = this->lien->actionOnRowsNB(sqlC);
+    //System::Diagnostics::Debug::WriteLine(Nb);
+    if (Nb > 0) {
+        return 1;
+    }
+    else {
+        return 0;
+    }
 }
 
 void CL_Services::ajouterArticle(System::String^ nomArt, System::String^ CategorieArt, System::String^ couleur, System::String^ reference, unsigned int quantite, double prixAchat)
