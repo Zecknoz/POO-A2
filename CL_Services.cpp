@@ -100,7 +100,9 @@ void CL_Services::modifierAdresseClient(unsigned int IDclient, System::String^ a
 
 void CL_Services::supprimerClient(unsigned int IDclient)
 {
-    throw gcnew System::NotImplementedException();
+    this->Client->setId(IDclient);
+    System::String^ sqlC = this->Client->supprimer();
+    this->lien->actionOnRows(sqlC);
 }
 
 void CL_Services::modifierClient(unsigned int IDclient, System::String^ NouveauNom, System::String^ NouveauPrenom, System::String^ NouvelledatePremAchat, unsigned int NouveauIDclient)
@@ -245,4 +247,68 @@ CL_Services::CL_Services()
     this->Commande = gcnew CL_Commandes();
     this->Article = gcnew CL_Articles();
     this->lien = gcnew CL_LVBDD();
+}
+
+System::Data::DataSet^ CL_Services::afficherstat10sup(System::String^ dataTableName)
+{
+    System::String^ sqlC = this->Statistique->top10BestSales();
+    return this->lien->getRows(sqlC, dataTableName);
+}
+
+System::Data::DataSet^ CL_Services::afficherstat10less(System::String^ dataTableName)
+{
+    System::String^ sqlC = this->Statistique->top10WorstSales();
+    return this->lien->getRows(sqlC, dataTableName);
+}
+
+int CL_Services::afficheCA()
+{
+    System::String^ sqlC = this->Statistique->calculateCommercialValue();
+    return this->lien->actionOnRowsNB(sqlC);
+}
+
+int CL_Services::afficheValue()
+{
+    System::String^ sqlC = this->Statistique->calculateBuyValue();
+    return this->lien->actionOnRowsNB(sqlC);
+}
+
+System::Boolean CL_Services::CheckArticleCommande(System::String^ reference)
+{
+    this->Article->setReference(reference);
+
+    System::String^ sqlC;
+
+    sqlC = this->Article->doExist();
+    int Nb = this->lien->actionOnRowsNB(sqlC);
+    //System::Diagnostics::Debug::WriteLine(Nb);
+    if (Nb > 0) {
+        return 1;
+    }
+    else {
+        return 0;
+    }
+}
+
+System::Boolean CL_Services::doExistClient(System::String^ nom, System::String^ prenom)
+{
+    this->Client->setNom(nom);
+    this->Client->setPrenom(prenom);
+
+    System::String^ sqlC;
+
+    sqlC = this->Client->doExist();
+    int Nb = this->lien->actionOnRowsNB(sqlC);
+    //System::Diagnostics::Debug::WriteLine(Nb);
+    if (Nb > 0) {
+        return 1;
+    }
+    else {
+        return 0;
+    }
+}
+System::Data::DataSet^ CL_Services::afficherCommande(System::String^ dataTableName)
+{
+    System::String^ sqlC = this->Commande->afficher();
+    return this->lien->getRows(sqlC, dataTableName);
 }
