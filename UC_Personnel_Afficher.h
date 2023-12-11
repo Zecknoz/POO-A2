@@ -113,6 +113,13 @@ namespace POOA2 {
 		Services = gcnew CL_Services();
 		this->dataGridViewEmploye->Refresh();
 		this->dataSetEmploye = this->Services->afficherToutPersonne("test");
+
+		System::Data::DataRow^ row = dataSetEmploye->Tables["test"]->Rows[dataSetEmploye->Tables["test"]->Rows->Count-1];
+		for (int i = 0; i < row->ItemArray->Length; i++) {
+		System::Diagnostics::Debug::WriteLine(row->ItemArray[i]->ToString());
+		}
+
+
 		this->dataGridViewEmploye->DataSource = this->dataSetEmploye;
 		this->dataGridViewEmploye->DataMember = "test";
 	}

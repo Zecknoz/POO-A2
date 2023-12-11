@@ -28,6 +28,11 @@ System::Boolean CL_Services::ajouterPersonne(System::String^ nom, System::String
 
 }
 
+System::String^ CL_Services::test()
+{
+    return "test";
+}
+
 void CL_Services::supprimerPersonne(unsigned int IDpersonnel)
 {
     this->Employe->setId(IDpersonnel);

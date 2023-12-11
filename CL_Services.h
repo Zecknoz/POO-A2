@@ -6,7 +6,7 @@
 #include "CL_Articles.h"
 #include "CL_LVBDD.h"
 
-ref class CL_Services
+public ref class CL_Services
 {
 private:
 	CL_Clients^ Client;
@@ -16,11 +16,11 @@ private:
 	CL_Articles^ Article;
 
 	CL_LVBDD^ lien;
-	System::Data::DataSet^ dataSet;
 
 public:
 
 	System::Boolean ajouterPersonne(System::String^ nom, System::String^ prenom, System::String^ adresse, System::String^ dateEmbauche, unsigned int IDsuperieur, System::String^, System::String^);
+	System::String^ test();
 	void supprimerPersonne(unsigned int IDpersonnel);
 	void modifierPersonne(unsigned int IDpersonnel, System::String^ NouveauNom, System::String^ NouveauPrenom, System::String^ dateEmbauche, unsigned int IDsuperieur);
 	void afficherPersonne(System::String^ nom, System::String^ prenom);

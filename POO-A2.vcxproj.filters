@@ -51,12 +51,6 @@
     <ClCompile Include="CL_Services.cpp">
       <Filter>Source Files\Classes</Filter>
     </ClCompile>
-    <ClCompile Include="CL_Gestion.cpp">
-      <Filter>Source Files\Classes</Filter>
-    </ClCompile>
-    <ClCompile Include="CL_Personnes.cpp">
-      <Filter>Source Files\Classes</Filter>
-    </ClCompile>
     <ClCompile Include="CL_Employes.cpp">
       <Filter>Source Files\Classes</Filter>
     </ClCompile>
@@ -108,6 +102,30 @@
     <ClCompile Include="UC_Personnel_Supprimer.cpp">
       <Filter>UserControls\UC_Personnels</Filter>
     </ClCompile>
+    <ClCompile Include="UC_Articles_Afficher.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="UC_Articles_Ajouter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="UC_Articles_Modifier.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="UC_Articles_Supprimer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="UC_Clients_Afficher.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="UC_Clients_Ajouter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="UC_Clients_Modifier.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="UC_Clients_Supprimer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyForm.h">
@@ -127,15 +145,6 @@
     </ClInclude>
     <ClInclude Include="UC_Stats.h">
       <Filter>UserControls</Filter>
-    </ClInclude>
-    <ClInclude Include="CL_Services.h">
-      <Filter>Header Files\Classes</Filter>
-    </ClInclude>
-    <ClInclude Include="CL_Gestion.h">
-      <Filter>Header Files\Classes</Filter>
-    </ClInclude>
-    <ClInclude Include="CL_Personnes.h">
-      <Filter>Header Files\Classes</Filter>
     </ClInclude>
     <ClInclude Include="CL_Employes.h">
       <Filter>Header Files\Classes</Filter>
@@ -187,6 +196,33 @@
     </ClInclude>
     <ClInclude Include="UC_Personnel_Supprimer.h">
       <Filter>UserControls\UC_Personnels</Filter>
+    </ClInclude>
+    <ClInclude Include="UC_Articles_Afficher.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="UC_Articles_Ajouter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="UC_Articles_Modifier.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="UC_Articles_Supprimer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="UC_Clients_Afficher.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="UC_Clients_Ajouter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="UC_Clients_Modifier.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="UC_Clients_Supprimer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CL_Services.h">
+      <Filter>Header Files\Classes</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
