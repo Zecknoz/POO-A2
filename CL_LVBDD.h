@@ -16,4 +16,5 @@ public:
 	void actionOnRows(System::String^ CommandSQL);
 	System::Data::DataSet^ getRows(System::String^ commandSQL, System::String^);
 	int actionOnRowsNB(System::String^ CommandSQL);
+	double actionOnRowsDouble(System::String^ CommandSQL);
 };

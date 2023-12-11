@@ -1,5 +1,10 @@
 #include "CL_Clients.h"
 
+System::String^ CL_Clients::doExist()
+{
+    return "SELECT COUNT(*) FROM client WHERE nom = '" + this->getNom() + "' and prenom = '" + this->getPrenom() + "';";
+}
+
 System::String^ CL_Clients::ajouter()
 {
     return "INSERT INTO Client (nom, prenom, email, tel, date_naissance) VALUES ('" + this->getNom() + "', '" + this->getPrenom() + "', '" + this->getEmail() + "', '" + this->getTelephone() + "', '" + System::Convert::ToDateTime(this->getDateAniv()) + "');";
@@ -7,8 +12,7 @@ System::String^ CL_Clients::ajouter()
 
 System::String^ CL_Clients::supprimer()
 {
-    throw gcnew System::NotImplementedException();
-    // TODO: insert return statement here
+    return "DELETE FROM Client WHERE ID_client = '" + this->getId() + "';";
 }
 
 System::String^ CL_Clients::modifier()
